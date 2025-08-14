@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+  <center><h1>Lanchonete Seu Zé</h1>
+   <hr>
+   <h3>Peça seu lanche!</h3> 
+   </center>
+   <form action=""method="">
+    <p> <label for="nome">Nome Completo</label>
+
+   <input type="text" id="nome" placeholder="Insira seu nome"required/>
+    </p>
+    <p>
+        <label for="datanasc">Data de Nascimento</label>
+        <input id ="datanasc" type="date"/>
+    </p>
+    <p>
+        <label for="indica">Numa escala de 1 a 5 como você nos indicaria ?</label>
+        <input id="indica" type="number" min="1"
+        max="5"/>
+    </p>
+    <p>
+        <label for="email">E-mail</label>
+        <input id="email" type="email"
+        placeholder="Informe seu E-mail" required/>
+    </p>
+    <p>
+        <label for="cor">Cor Favorita</label>
+        <input id="cor" type="color"/>
+    </p>
+    <p>
+        <label for="volume">Em qual volume você ouve musica (0 a 100)</label>
+        <input id="volume" type="range" min="0" max="100" value="50" oninput="valorVolume.textContent = this.value"/>
+        <span id="valorVolume">50</span>
+        <style>
+            #volume{
+                accent-color: rgb(179, 0, 0);
+            }
+        </style>
+    </p>
+    <fieldset>
+        <legend>Gênero</legend>
+        <input type="radio" id="masc" name="genero"/>
+        <label for="masc">Masculino</label>
+      
+        <input type="radio" id="fem" name="genero"/>
+        <label for="fem">Feminino</label>
+
+          <style>
+            #masc{
+                accent-color: red;
+            }
+             #fem{
+                accent-color: purple;
+            }
+        </style>
+        
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Monte seu Lanche</legend>
+        <input type="checkbox" id="salada"/>
+        <label for="salada">Salada</label>
+        <!-- ------------------------------------- -->
+        <input type="checkbox" id="hamb">
+        <label for="hamb">Hamburguer</label>
+        <!-- ------------------------------------- -->
+        <input type="checkbox" id="bac">
+        <label for="bac">Bacon</label>
+        <!-- ------------------------------------- -->
+        <input type="checkbox" id="queijo">
+        <label for="queijo">Queijo</label>
+        <!-- ------------------------------------- -->
+        <input type="checkbox" id="tom">
+        <label for="tom">Tomate</label>
+        <!-- ------------------------------------- -->
+        <input type="checkbox" id="ovo">
+        <label for="ovo">Ovo</label>
+        <!-- ------------------------------------- -->
+        <input type="checkbox" id="maio">
+        <label for="maio">Maionese</label>
+        <!-- ------------------------------------- -->
+        <input type="checkbox" id="pre">
+        <label for="pre">Presunto</label>
+
+        <style>
+            #salada{
+                accent-color: green
+                ;
+            }
+            #hamb{
+                accent-color:rgb(53, 3, 3);
+            }
+            #bac{
+                accent-color: rgb(161, 0, 0);
+            }
+            #queijo{
+                accent-color: yellow;
+            }
+            #tom{
+                accent-color: red;
+            }
+            #ovo{
+                accent-color: white;
+            }
+            #maio{
+                accent-color: beige;
+            }
+            #pre{
+                accent-color: pink;
+            }
+        </style>
+        
+        
+    </fieldset>
+    <fieldset>
+    <legend>Escolha sua bebida</legend>
+        <input type="checkbox" id="coca"/>
+        <label for="coca"><img src="Coca Cola Can.png" width ="230" height="200"></label>
+        <!-- ------------------------------------- -->
+        <input type="checkbox" id="fanta"/>
+        <label for="fanta"><img src="fanta.jpg"width ="240" height="200"></label>
+        <!-- ------------------------------------- -->
+        <input type="checkbox" id="Guarana"/>
+        <label for="Guarana"><img src="BGuarana.png"width ="250" height="250"></label>
+        <!-- ------------------------------------- -->
+        <input type="checkbox" id="agua"/>
+        <label for="agua"><img src="agua.webp"width ="300" height="200"></label>
+
+    </fieldset>
+
+   <br>
+
+   <label for="info"> Informações Adicionais</label>
+   <textarea id="info"></textarea>
+   <br>
+   <br>
+
+   <label for="cidade">Informe a Cidade</label>
+   <select id="cidade">
+    <option>Jaguariuna</option>
+    <option> Amparo</option>
+    <option>Pedreira</option>
+   </select>
+
+
+</form>
+</body>
+</html>
