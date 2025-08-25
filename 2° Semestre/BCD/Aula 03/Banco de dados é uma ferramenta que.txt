@@ -1,0 +1,42 @@
+Banco de dados é uma ferramenta que organiza dados e informações, normalmente é eletrônico armazenado em um computador. E geralmente é controlado por um sistema de gerenciamento de banco de dados (DBMS). juntamente com os aplicativos associados a eles são chamados de sistemas de banco de dados geralmente abreviado, banco de dados.
+os dados nos tipos mais comuns de banco de dados em operação atualmente são modelados em linhas e colunas. A maioria usa a linguagem de consulta estruturada (SQL).
+
+Tipos de dados:
+
+Estruturados:
+São organizados em um formato fixo e previsível, como tabelas em um banco de dados relacionados
+possuem um esquema pré-definido, com regras clara sobre como os dados devem ser armazenados e acessados
+fáceis de consultar e analisar pois a estrutura permite consultas precisas.
+
+Não estruturados:
+Não possuem uma estrutura pré-definida e podem variar muito em formato e conteúdo.
+podem incluir texto livre, imagens, vídeos, áudios, etc.
+mais difíceis de analisar e consultar pois não há uma padrão para pesquisa.
+
+Semi estruturados
+possuem alguma organização mas não seguem a risca um esquema rígido como os dados estruturados.
+podem conter metadados, como tags ou marcadores, que ajudam na organização e pesquisa.
+são mais flexíveis que os dados estruturados permitindo diferentes tipos de informações.
+
+tipos de banco de dados:
+
+relacional: Organiza os dados em tabelas com linhas e colunas. Usa a linguagem(SQL) 
+ex: MySQL, PostgreSQL, Oracle.
+
+Não relacional: Armazena os dados de forma mais flexível, sem estrutura fixa de tabelas, Ideal para dados dinâmicos e grande volume.
+ex: MOngoDB, Redis,Neo4j.
+
+orientado a objeto: Armazena dados como objetos, seguindo o paradigma da programação orientada a objetos.
+ex: Realm, ObjectDB, Versant.
+
+Distribuido: Os dados são armazenados em diferentes locais físicos(servidores), mas funcionam como se fossem um único banco.
+ex: Google Spanner, Apache Cassandra.
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
