@@ -1,0 +1,57 @@
+Script 2
+
+CREATE DATABASE concessionária;
+
+use concessionária;
+
+CREATE TABLE clientes(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    cpf VARCHAR(100)
+);
+
+use concessionária;
+
+CREATE TABLE veiculos(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    modelo VARCHAR(100),
+    placa VARCHAR(50),
+    categoria VARCHAR(100)
+);
+
+use concessionária;
+
+CREATE TABLE manutencoes(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    veiculoid INTEGER,
+    tipo VARCHAR(50),
+    data DATE,
+    observacao VARCHAR(100),
+    FOREIGN KEY (veiculoid) REFERENCES veiculos(id)
+);
+
+use concessionária;
+
+CREATE TABLE contratos(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    veiculoid INTEGER,
+    clienteid INTEGER,
+    datainicio DATE,
+    datafim DATE,
+    valor VARCHAR(100),
+    FOREIGN KEY (veiculoid) REFERENCES veiculos(id),
+    FOREIGN KEY (clienteid) REFERENCES clientes(id)   
+);
+
+INSERT INTO clientes
+VALUES (DEFAULT, "Julia Novo","478532628");
+
+INSERT INTO veiculos
+VALUES (DEFAULT, "Civic","A4567-56G3", "SUV");
+
+INSERT INTO manutencoes
+VALUES (DEFAULT, "1","direcao", "2025-09-01","freio ruim");
+
+INSERT INTO contratos
+VALUES (DEFAULT, "1","1", "2025-02-01", "2025-02-11","300");
+

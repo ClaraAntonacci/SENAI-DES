@@ -1,0 +1,45 @@
+Script 1
+
+CREATE DATABASE escola;
+
+CREATE TABLE professores(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    email VARCHAR(100),
+    telefone VARCHAR(50)
+);
+
+CREATE TABLE disciplinas(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    professorid INTEGER,
+    FOREIGN KEY (professorid) REFERENCES professores(id)
+);
+
+CREATE TABLE turmas(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    periodo VARCHAR(100),
+    nome VARCHAR (100)
+);
+
+CREATE TABLE possui(
+    turmasid INTEGER,
+    disciplinasid INTEGER,
+    FOREIGN KEY (turmasid) REFERENCES turmas(id),
+    FOREIGN KEY (disciplinasid) REFERENCES disciplinas(id)
+);
+
+INSERT INTO professores
+VALUES (DEFAULT, "Beltrano de Costa","belbel.de.Costa@gmail.com", "(19) 9834567");
+
+INSERT INTO turmas
+VALUES (DEFAULT, "tarde","2-A");
+
+INSERT INTO turmas
+VALUES (DEFAULT, "biologia","edilaine");
+
+INSERT INTO disciplinas
+VALUES (DEFAULT, "biologia","1");
+
+INSERT INTO possui
+VALUES ("1","1");

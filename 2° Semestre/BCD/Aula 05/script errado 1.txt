@@ -1,0 +1,13 @@
+script errado 1
+CREAT TABLE departamento (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHA(100)
+);
+
+CREAT TABLE funcionarios (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR (100),
+  cargo VARCHAR (50),
+  departamentoid INTEGER,
+  FOREGIN KEY (departamentoid) REFERENCES departamento(id)
+);

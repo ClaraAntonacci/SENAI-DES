@@ -1,0 +1,47 @@
+Script 3
+
+CREATE DATABASE musica;
+
+use musica;
+CREATE TABLE usuarios(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    email VARCHAR(100)
+);
+
+use musica;
+CREATE TABLE playlist(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    usuarioid INTEGER,
+    nome VARCHAR(100),
+    FOREIGN KEY (usuarioid) REFERENCES usuarios(id)
+);
+
+use musica;
+CREATE TABLE musica(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(50),
+    artista VARCHAR(100),
+    duracao VARCHAR(30)
+);
+use musica;
+CREATE TABLE playlist_musica(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    ordem VARCHAR(50),
+    musicaid INTEGER,
+    playlistid INTEGER,
+    FOREIGN KEY (musicaid) REFERENCES musica(id),
+    FOREIGN KEY (playlistid) REFERENCES  playlist(id)
+);
+
+INSERT INTO musica
+VALUES (DEFAULT, "aliança","tribalistas","3min");
+
+INSERT INTO usuarios
+VALUES (DEFAULT, "Giovana","gcorrea@gmail.com");
+
+INSERT INTO playlist
+VALUES (DEFAULT, "1","as mais mais");
+
+INSERT INTO playlist_musica
+VALUES (DEFAULT, "1","1","1");
