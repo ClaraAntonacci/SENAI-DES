@@ -1,3 +1,4 @@
+//um array simples com objetos representando usuários.
 const usuarios = [
     {
         "matricula": "123",
@@ -10,4 +11,5 @@ const usuarios = [
         "telefone": "(19) 97894-4567"
     }
 ];
+//exporta o array para ser usado pelo controller.
 module.exports = usuarios;
