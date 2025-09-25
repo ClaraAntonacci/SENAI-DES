@@ -5,11 +5,11 @@
 }
 body{
     font-family:Arial,sans-serif;
-    background: black;
+    background: white;
     line-height: 1.6;
 }
 header{
-    background:white;
+    background: #333;
     color: #fff;
     padding: 1rem 0;
     text-align: center;

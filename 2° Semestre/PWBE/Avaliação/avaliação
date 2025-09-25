@@ -1,0 +1,427 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1755784925109
+  modified: 1755784925109
+  description: ""
+collection:
+  - name: Biblioteca
+    meta:
+      id: fld_f840745dc00242fb9c6062dd3a8b9622
+      created: 1755785846227
+      modified: 1755785846227
+      sortKey: -1755785846227
+      description: ""
+    children:
+      - name: Usuarios
+        meta:
+          id: fld_11c48bc4bc2443e894ceb43d2668bec2
+          created: 1755785876597
+          modified: 1755785876597
+          sortKey: -1755785876597
+          description: ""
+      - name: Livros
+        meta:
+          id: fld_6eb5726822cb49e1a2a73d06d10bf474
+          created: 1756389483641
+          modified: 1756389483641
+          sortKey: -1756389483641
+          description: ""
+  - name: Escola
+    meta:
+      id: fld_f0a5fb74c64e451f86237e20db7c3668
+      created: 1756990924332
+      modified: 1756990924332
+      sortKey: -1756990924332
+      description: ""
+    children:
+      - name: Professores
+        meta:
+          id: fld_cfa4bbab40ae41e4a189625359edf8f8
+          created: 1756990941843
+          modified: 1756991017890
+          sortKey: -1756990945082
+          description: ""
+      - name: Turmas
+        meta:
+          id: fld_de42357af5ea481a8875c03dbd78dcb4
+          created: 1756992735601
+          modified: 1756992739810
+          sortKey: -1756990945182
+          description: ""
+      - name: Disciplinas
+        meta:
+          id: fld_912c7a4993eb429ba5a0621adcc90274
+          created: 1756994902151
+          modified: 1756995598654
+          sortKey: -1756990945282
+          description: ""
+      - name: Possui
+        meta:
+          id: fld_6f184e60bc254937a113df3b08d9e60d
+          created: 1756995611018
+          modified: 1756995615996
+          sortKey: -1756990945382
+          description: ""
+  - name: Loja
+    meta:
+      id: fld_761b8e1577ff41c99f1e64930729b482
+      created: 1758197864268
+      modified: 1758197864268
+      sortKey: -1758197864268
+      description: ""
+    children:
+      - name: Pedidos
+        meta:
+          id: fld_ed0fb752597c4bd18db2cd1ea788b08f
+          created: 1758197904885
+          modified: 1758197908022
+          sortKey: -1758197907985
+          description: ""
+        children:
+          - url: http://localhost:3000/pedidos
+            name: Listar
+            meta:
+              id: req_60078c4fd07d4168862ec9565caf014f
+              created: 1758197911341
+              modified: 1758203520309
+              isPrivate: false
+              description: ""
+              sortKey: -1758197914656
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.5.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedidos/7
+            name: Buscar
+            meta:
+              id: req_d956ab27c359401ebef79bc7a64ab0cc
+              created: 1758197923047
+              modified: 1758204257417
+              isPrivate: false
+              description: ""
+              sortKey: -1758197914556
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.5.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedidos
+            name: cadastrar
+            meta:
+              id: req_9ccc45a6067e4781bffc9dcbb4902279
+              created: 1758197956967
+              modified: 1758204162131
+              isPrivate: false
+              description: ""
+              sortKey: -1758197914456
+            method: POST
+            body:
+              mimeType: application/json
+              text: |
+                {
+                		"id": "7",
+                		"produtoid": "456",
+                		"clientecpf": "789123",
+                		"quantidade": "23",
+                		"data": "2025-09-11",
+                		"status": "pendente"
+                	}
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.5.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedido/1
+            name: atualizar
+            meta:
+              id: req_63d7320692b14e9a81b50bc19f542ed6
+              created: 1758198010229
+              modified: 1758202228966
+              isPrivate: false
+              description: ""
+              sortKey: -1758198010229
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                		"id": "1",
+                		"produtoid": "123",
+                		"clientecpf": "123456",
+                		"quantidade": "2",
+                		"data": "2025-09-18",
+                	  "status": "enviado"
+                	  
+                	}
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.5.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Clientes
+        meta:
+          id: fld_0e8f96c5029646cf829bc5d5113760ab
+          created: 1758200050363
+          modified: 1758200052467
+          sortKey: -1758197908085
+          description: ""
+        children:
+          - url: http://localhost:3000/clientes
+            name: Listar
+            meta:
+              id: req_d195560f07e847f58752bbf60d9a73c8
+              created: 1758200060059
+              modified: 1758201227971
+              isPrivate: false
+              description: ""
+              sortKey: -1758200060059
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.5.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/clientes/123456
+            name: Buscar
+            meta:
+              id: req_16e9c4acf9e14bd291c4c552bdbcb719
+              created: 1758200070367
+              modified: 1758201241193
+              isPrivate: false
+              description: ""
+              sortKey: -1758200070367
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.5.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/cliente
+            name: Cadastrar
+            meta:
+              id: req_3ca7bbe4c18b402989853f8c1368ac8a
+              created: 1758200082664
+              modified: 1758201322251
+              isPrivate: false
+              description: ""
+              sortKey: -1758200082664
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                
+                	{
+                		"cpf": "98765",
+                		"nome": "Fulano da tal",
+                		"email": "fulano.da.tal@gmail.com",
+                		"telefone": "(19) 91234-3412",
+                		"endereço": "Rua dos espertos, 0"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.5.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Produtos
+        meta:
+          id: fld_d438b406728e410592c5bad9b9fd609a
+          created: 1758200699237
+          modified: 1758200701696
+          sortKey: -1758197908185
+          description: ""
+        children:
+          - url: http://localhost:3000/produtos
+            name: Listar
+            meta:
+              id: req_2cc1bfb2fa9b4e5f9c915d5e181e5d4e
+              created: 1758200704264
+              modified: 1758204664795
+              isPrivate: false
+              description: ""
+              sortKey: -1758200704264
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.5.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos/123
+            name: Buscar
+            meta:
+              id: req_4bb4b46c7c44489aae2a8f141fc5969a
+              created: 1758200717279
+              modified: 1758204652465
+              isPrivate: false
+              description: ""
+              sortKey: -1758200717279
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.5.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produto
+            name: Cadastrar
+            meta:
+              id: req_4d8b7306b96244f69baa792fa32bf86a
+              created: 1758200741585
+              modified: 1758200959443
+              isPrivate: false
+              description: ""
+              sortKey: -1758200741585
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"id": "1314",
+                	"nome": "shorts",
+                	"descrição": "Shorts branco",
+                	"preço": "45.90",
+                	"quantidade disponivel": "10"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.5.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos/1314
+            name: Apagar
+            meta:
+              id: req_ff34c7a758ad4cfe9a16bf2e28bd1abc
+              created: 1758200764782
+              modified: 1758201000422
+              isPrivate: false
+              description: ""
+              sortKey: -1758200764782
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.5.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produto
+            name: Atualizar
+            meta:
+              id: req_967f0bb7681a473283a3df3778f0a380
+              created: 1758201034173
+              modified: 1758201078981
+              isPrivate: false
+              description: ""
+              sortKey: -1758201034173
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                	{
+                		"id": "456",
+                		"nome": "Boné",
+                		"descrição": "Boné preto",
+                		"preço": "25.90",
+                		"quantidade disponivel": "20"
+                	}
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.5.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1755785026033
+    modified: 1755785026033
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1755785025881
+    modified: 1755785025881
+    isPrivate: false

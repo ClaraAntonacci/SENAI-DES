@@ -1,0 +1,93 @@
+Qualidade de software:
+conformidades com requisitos
+dimensões da qualidade
+
+metodologia 
+cascata
+modelo em v
+modelo incremental
+
+A importância da metodologia de gerenciamento de projetos
+
+ela proporciona estrutura e clareza, permitindo a organização, o planejamento, e o controlo eficaz de todas as etapas do projeto, o que resulta em melhor desempenho e menores riscos
+
+Escopo 
+define claramente o que será entregue pelo projeto incluindo limites, entregas principais e critérios de aceitação além de especificar o que esta fora do projeto
+
+Objetivos
+projetos devem ser claros e alinhados com as expectativas das partes interessadas. (Revisão continua).
+
+Riscos
+identificar, avaliar e mitigar.
+permitindo que você (e a equipe) esteja preparado para surpresas e maximizar o controle sobre o projeto.
+
+Cronograma
+Organiza tempo e estipula datas e entregas. definindo marcos importantes.
+
+Recursos
+equipe, materiais, equipamentos e infraestruturas (começo de projeto tem que ter gabaritar essa lista).
+
+Custos
+controlar os custos envolve estimar e monitorar os gastos ao longo do projeto, garantindo que o orçamento não seja ultrapassado e permitindo correções em tempo.
+
+EAP - Estrutura Analítica do projeto
+A EAP divide o projeto em partes menores, chamadas pacotes de trabalho, facilitando o controle e a atribuição de responsabilidades, além de ajudar no acompanhamento do progresso.
+
+Definição de escopo
+é um elemento fundamental do gerenciamento de projetos, pois estabelece claramente o que deve ser entregue ao final da iniciativa. Inclui aspectos como limites do projeto, entregas principais que devem ser realizadas e critérios de aceitação que garantem a qualidade do resultado final. Além disso, o escopo também define o que esta fora do alcance do projeto, ajudando a evitar retrabalhos e alinhar as expectativas das partes interessadas.
+
+Alinhamento com as partes interessadas 
+Assegura que as expectativas das partes interessadas sejam atendidas. Essa pratica ajuda a identificar se o objetivos ainda são relevantes e viáveis, considerando as mudanças que podem ocorrer ao longo do projeto.
+
+Consequências da falta de Revisão
+Pode levar ao desvio de foco, frustração entre as partes interessadas e ate mesmo ao fracasso do projeto. Portanto, um processo de revisão continuo é imprescindível para manter a aliança e a eficiência na execução do projeto.
+
+Componentes da Analise de risco
+
+Identificação de riscos:
+É o primeiro passo, onde busca entender quais problemas podem impactar o projeto e quais são suas origens.
+Avaliação de Riscos: 
+Após identificar os riscos, é essencial avaliar a probabilidade de ocorrência e os impactos que poderiam causar, priorizando assim as ações a serem tomadas.
+Mitigação de Riscos:
+A mitigação de riscos envolve a elaboração de estratégias para reduzir a probabilidade de ocorrência ou impacto, garantindo um maior controle sobre o projeto.
+
+Importância do Cronograma:
+Organização do tempo: 
+O cronograma é uma ferramenta vital que organiza as atividades do projeto, permitindo o controle eficaz do tempo. ele deve ser claro e acessível a todos os membros da equipe para garantir que os prazos sejam cumpridos
+Definição de prazos: 
+As datas de inicio e fim são fundamentais para o planejamento do projeto. Um cronograma bem estruturado ajuda a prevenir atrasos e garante  que todas as partes envolvidas tenham clareza sobre os prazos.
+Marcos do projeto:
+são pontos críticos que indicam o progresso do projeto. Eles ajudam a equipe a monitorar o andamento e realizar ajustes se necessário.
+
+Recurso: A base do sucesso do Projeto
+Os recursos de um projeto abrangem recursos humanos, materiais, equipamentos e infraestrutura. A gestão eficaz desses elementos é essencial para garantir a produtividade e o cumprimento dos prazos estabelecidos.
+
+Importância do controle de Custos:
+O controle de custos é essencial para garantir que o projeto permaneça dentro do orçamento. Isso envolve estimar os gastos de forma precisa, monitorar continuamente financeiro previne surpresas e garante a viabilidade do projeto.( guardar uma reserva de para prevenir os futuros problemas).
+Técnica de Gestão de custos:
+a gestão eficiente dos custos requer a implementação de técnicas como o uso de margens de contingencia e a aplicação de ferramentas de monitoramento. Isso não só facilita a identificação de desvios, mas também permite a tomada de decisões rápidas e informadas para corrigir o curso, assegurando a saúde financeira do projeto.
+
+EAP
+Visão estrutural do projeto:
+visão clara e detalhada do projeto, promovendo um entendimento completo das entregas e atividades.
+pacotes de Trabalho:
+os pacotes de trabalho são as unidades básicas que facilitam a gestão de tarefas, responsabilidades e prazos.
+Comunicação eficaz:
+A EAP é essencial para a comunicação eficaz entre os membros do projeto, garantindo que todos estejam alinhados com os objetivos e entregas.
+ 
+Escopo em ação:
+
+Inicio do projeto: definição das entregas principais do sistema.
+revisão do escopo 
+fechamento do escopo
+
+Gerenciamento do projeto
+A gestão de projetos efetiva é fundamental para atingir os objetivos desejados.Cada componente da metodologia, como escopo, recursos e cronograma, desempenha um papel crucial na realização das metas do projeto. A adoção de práticas solidas e uma estrutura bem definkida são determinantes para minimizar riscos e maximizar resultados.
+
+
+
+
+
+
+
+

@@ -1,0 +1,136 @@
+
+:root {
+    --primary-color: #228B22; 
+    --secondary-color: #FFD700; 
+    --background-color: #2F4F4F; 
+    --text-color: #fff;
+    --hover-color: #7FFF00; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--hover-color);
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+section {
+    padding: 40px;
+    margin-top: 20px;
+}
+
+.cartao {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.cartao img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.cartao h3 {
+    margin-top: 10px;
+}
+
+.cartao p {
+    font-size: 0.9em;
+}
+
+
+.cartao:hover {
+    transform: scale(1.05);
+}
+
+#imagens .gallery img {
+    width: 30%;
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#imagens .gallery img:hover {
+    transform: scale(1.1);
+}
+
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}

@@ -1,0 +1,149 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #0f172a; 
+    color: #e2e8f0;      
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #1e3a8a, #1e40af);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem; 
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #93c5fd; 
+}
+
+
+section {
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.capa-filme img {
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    margin: 0 auto 2rem auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+}
+
+
+h2, h3 {
+    color: #60a5fa; 
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+.elenco-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.cartao {
+    background: #1e293b; 
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.cartao:hover {
+    transform: scale(1.05);
+}
+
+.cartao img {
+    width: 120px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.cartao p {
+    margin: 0.3rem 0;
+}
+
+
+#contato {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.contato-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.contato-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #60a5fa;  
+}
+
+.contato-container a {
+    text-decoration: none;
+    color: #60a5fa; 
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contato-container a:hover {
+    color: #93c5fd; 
+}
+
+
+footer {
+    background: #1e293b;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
