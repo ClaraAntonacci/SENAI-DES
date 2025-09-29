@@ -1,4 +1,4 @@
-const mysql = require("mysql2/promise");
+const mysql = require("mysql2/promise.js");
 
 const connection = mysql.createPool({
     host: "localhost",
@@ -9,10 +9,9 @@ const connection = mysql.createPool({
 
 module.exports = connection;
 
-
 /*
-host -> Endereço do banco de dados
-usuario -> Usuari do banco de dados
-password -> Senha do usuario
-database -> Base de dados
+host -> endereço do banco de dados
+user -> usuario do banco de dados
+password -> senha do usuario
+database -> base de dados
 */
