@@ -70,10 +70,16 @@ const atualizarCliente = async (req, res) => {
     }
 };
 
+const TotalGastos = async (req, res) =>{
+    const gastos = await db.query("SELECT locacoes.cliente_id, SUM(filmes.preco) AS 'Total de gastos' FROM locacoes INNER JOIN filmes ON locacoes.filme_id = filmes.id GROUP BY locacoes.cliente_id ORDER BY filmes.id");
+    res.json(gastos[0]).end();
+};
+
 module.exports = {
     listarClientes,
     buscarClientes,
     cadastrarClientes,
     excluirClientes,
-    atualizarCliente
+    atualizarCliente,
+    TotalGastos
 }

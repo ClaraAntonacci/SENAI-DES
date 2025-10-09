@@ -18,7 +18,7 @@ const cadastrarFilmes = async (req, res) => {
 
     const filme = {
         id: novoFilme[0].insertId,
-        nome: nome
+        titulo: titulo
     }
 
     res.json(filme).status(201).end();
@@ -50,10 +50,10 @@ const excluirFilmes = async (req, res) => {
 };
 
 const atualizarFilme = async (req, res) => {
-    const {id, titulo, categoria} = req.body;
+    const {id, titulo, categoria, preco} = req.body;
 
     try{
-        const update = await db.query("UPDATE filmes SET  titulo= ?, categoria = ? WHERE id = ?", [titulo, categoria, id]);
+        const update = await db.query("UPDATE filmes SET  titulo= ?, categoria = ?, preco = ? WHERE id = ? ", [titulo, categoria, preco, id]);
 
         const info  = {msg:""}
 
@@ -70,10 +70,22 @@ const atualizarFilme = async (req, res) => {
     }
 };
 
+const quantidadeporCategoria = async (req, res) =>{
+    const categoria = await db.query("SELECT filmes.categoria, COUNT(locacoes.id) AS Total FROM locacoes INNER JOIN filmes ON locacoes.filme_id = filmes.id GROUP BY filmes.categoria ORDER BY filmes.id");
+    res.json(categoria[0]).end();
+}
+
+const faturamentoporcategoria = async (req, res) =>{
+    const faturamento = await db.query ("SELECT filmes.categoria, SUM(filmes.preco) AS Faturamento FROM locacoes INNER JOIN filmes ON locacoes.filme_id = filmes.id GROUP BY filmes.categoria ORDER BY filmes.id")
+    res.json(faturamento[0]).end();
+}
+
 module.exports = {
     listarFilmes,
     buscarFilmes,
     cadastrarFilmes,
     excluirFilmes,
-    atualizarFilme
+    atualizarFilme,
+    quantidadeporCategoria,
+    faturamentoporcategoria
 }
