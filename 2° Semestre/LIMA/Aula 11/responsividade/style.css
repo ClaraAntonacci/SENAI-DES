@@ -21,9 +21,10 @@ header {
 }
 
 nav {
-    width: 15vw;
+    width: 200px;
     height: 90vh;
     background-color: #333;
+    transition: .2s;
 }
 
 nav ul {
@@ -31,7 +32,7 @@ nav ul {
 }
 
 nav ul li {
-    width: 100%;
+    width: 200px;
     height: 40px;
     padding: 5px;
     color: #fff;
@@ -65,7 +66,9 @@ nav ul li:hover{
         display: block;
     }
     nav{
-        display: none;
+        position: absolute;
+        top: 0;
+        left: -200px;
+        height: 100vh;
     }
 }
-

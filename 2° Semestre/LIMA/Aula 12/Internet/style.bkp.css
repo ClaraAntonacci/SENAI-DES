@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #001f5b;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detalhe-container {
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.detalhe-box {
+  background-color: #e6e6e6;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.detalhe-box h3 {
+  margin-bottom: 15px;
+  color: #001f5b;
+}
+
+.detalhe-box p {
+  margin-bottom: 10px;
+  color: #000;
+  font-size: 0.95rem;
+}
+
+.voltar {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.voltar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.voltar a:hover {
+  text-decoration: underline;
+}
+.lista-chamados {
+  background-color: #001f5b;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 300px;        
+  overflow-y: auto;        
+  border-radius: 5px;
+}
+
+.btn-voltar {
+  position: fixed;
+  bottom: 20px;     
+  left: 20px;       
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e6e6; 
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+
+.btn-voltar img {
+  width: 30px;    
+  height: 30px;
+  margin-right: 10px;
+}
+
+.btn-voltar:hover {
+  background-color: #004085; 
+}
+

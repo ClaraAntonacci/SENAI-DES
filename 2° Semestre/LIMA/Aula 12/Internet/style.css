@@ -1,0 +1,135 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+
+.home-container {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo{
+  width: 60px;
+  height: 60px;
+  /* border-radius: 50%; */
+  object-fit: cover;
+
+}
+.user {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.titulo {
+  padding-left: 15px;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.lista-chamados {
+  background-color: #001f5b;  
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;       
+  border-radius: 5px;
+}
+
+.chamado {
+  display: flex;
+  gap: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  align-items: center;
+}
+
+.icone {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.info h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.info p {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+
+.btn-voltar {
+  position: fixed;
+  bottom: 20px;    
+  left: 20px;      
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #001f5b;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+
+.btn-voltar img {
+  width: 30px;    
+  height: 30px;
+  margin-right: 10px; 
+}
+
+.btn-voltar:hover {
+  background-color: #004085; 
+}
+
+.btn-voltar:active {
+  background-color: #002b56; 
+}
+
+@media (max-width: 500px) {
+  .home-container {
+    padding: 10px;
+  }
+
+  .logo{
+    width: 50px;
+    height: 50px;
+  }
+  .user {
+    width: 50px;
+    height: 50px;
+  }
+
+  .lista-chamados {
+    max-height: 250px;
+  }
+}
