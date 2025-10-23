@@ -15,10 +15,11 @@ const Login  = async (req, res) => {
         const token = jsonwebtoken.sign(
             {
                 id: usuario[0][0].id,
-                nome: usuario[0][0].nome
+                nome: usuario[0][0].nome,
+                cargo: usuario[0][0].cargo
             },
             process.env.SECRET_JWT,
-            { expiresIn: "2min" }
+            { expiresIn: "60min" }
         );
 
         res.status(200).json({ token : token }).end();
@@ -48,8 +49,20 @@ const cadastrarUsuario = async (req, res) => {
         res.status(500).json(error).end();
     }
 };
+const listarUsuarios = async (req, res) => {
+    const lista = await db.query("SELECT * FROM  users");
+    res.json(lista[0]).end();
+};
+
+const postAutor = async (req, res) => {
+    const idpost = req.params.id;
+    const ver = await db.query("SELECT * FROM posts WHERE user_id = " + idpost);
+    res.json(ver[0][0]).end();
+};
 
 module.exports = {
     Login,
-    cadastrarUsuario
+    cadastrarUsuario,
+    listarUsuarios,
+    postAutor
 }
