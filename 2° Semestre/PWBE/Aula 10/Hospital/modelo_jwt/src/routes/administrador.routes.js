@@ -27,7 +27,7 @@ AdmRoutes.get('/usuario', validate, validaAdm,AdmController.listarRelatorios);
 AdmRoutes.get('/usuario/medico/:medico_id', validate, validaMedicos,AdmController.listarPormedico);
 // AdmRoutes.get('/usuario/medico/:medico_id', AdmController.listarPormedico);
 
-AdmRoutes.get('/usuario/especialidade/:id', validate, validaMedicos,AdmController.consultasPorespecialidade);
+AdmRoutes.get('/usuario/especialidade', validate, validaMedicos,AdmController.consultasPorespecialidade);
 // AdmRoutes.get('/usuario/especialidade/:especialidade_id', AdmController.consultasPorespecialidade);
 
 AdmRoutes.get('/usuario/paciente/:paciente_id', validate, validaMedicos,AdmController.verDadosPaciente);

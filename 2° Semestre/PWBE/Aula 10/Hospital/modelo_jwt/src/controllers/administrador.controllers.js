@@ -124,7 +124,7 @@ const listarPormedico = async (req, res) => {
 
 const consultasPorespecialidade = async (req, res) => {
     const { id } = req.params;
-    const lista = await db.query("SELECT * FROM especialidade WHERE id = ?", [id]);
+    const lista = await db.query("SELECT especialidade.nome, COUNT(consultas.id) FROM doctor INNER JOIN especialidade ON especialidade.id = doctor.especialidade_id INNER JOIN consultas ON doctor.id = consultas.medico_id GROUP BY especialidade.id", [id]);
     res.json(lista[0]).end();
 };
 
