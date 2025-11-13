@@ -83,23 +83,23 @@
 
 // USE saberinfinito;
 
-SELECT livros.titulo, leitor.nome FROM emprestimos
-INNER JOIN livros ON livros.id = emprestimos.livros_id
-INNER JOIN leitor ON leitor.id = emprestimos.leitor_id
-WHERE leitor.nome LIKE "%fulano%"
+// SELECT livros.titulo, leitor.nome FROM emprestimos
+// INNER JOIN livros ON livros.id = emprestimos.livros_id
+// INNER JOIN leitor ON leitor.id = emprestimos.leitor_id
+// WHERE leitor.nome LIKE "%fulano%"
 
 
-SELECT livros.titulo, leitor.nome, emprestimos.* FROM emprestimos
-INNER JOIN livros ON livros.id = emprestimos.livros_id
-INNER JOIN leitor ON leitor.id = emprestimos.leitor_id
-WHERE data_devolucao < "2025-11-07"
+// SELECT livros.titulo, leitor.nome, emprestimos.* FROM emprestimos
+// INNER JOIN livros ON livros.id = emprestimos.livros_id
+// INNER JOIN leitor ON leitor.id = emprestimos.leitor_id
+// WHERE data_devolucao < "2025-11-07"
 
 	
-SELECT livros.titulo, leitor.nome, emprestimos.* FROM emprestimos
-INNER JOIN livros ON livros.id = emprestimos.livros_id
-INNER JOIN leitor ON leitor.id = emprestimos.leitor_id WHERE emprestimos.livros_id = 1
+// SELECT livros.titulo, leitor.nome, emprestimos.* FROM emprestimos
+// INNER JOIN livros ON livros.id = emprestimos.livros_id
+// INNER JOIN leitor ON leitor.id = emprestimos.leitor_id WHERE emprestimos.livros_id = 1
 
 
-SELECT leitor.nome, COUNT(*) AS total_emprestimo FROM emprestimos
-INNER JOIN livros ON livros.id = emprestimos.livros_id
-INNER JOIN leitor ON leitor.id = emprestimos.leitor_id GROUP BY leitor.id
+// SELECT leitor.nome, COUNT(*) AS total_emprestimo FROM emprestimos
+// INNER JOIN livros ON livros.id = emprestimos.livros_id
+// INNER JOIN leitor ON leitor.id = emprestimos.leitor_id GROUP BY leitor.id
