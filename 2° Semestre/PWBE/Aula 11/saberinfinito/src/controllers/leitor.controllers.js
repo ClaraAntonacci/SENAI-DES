@@ -39,7 +39,7 @@ const cadastrarLeitor = async (req, res) => {
     try {
         const senhahash = crypto.createHash('MD5').update(senha).digest('hex').toString();
 
-        const resultado = await db.query("INSERT INTO users VALUES (DEFAULT, ?, ?, ?)", [nome, email, senhahash]);
+        const resultado = await db.query("INSERT INTO leitor VALUES (DEFAULT, ?, ?, ?)", [nome, email, senhahash]);
 
         const novoUsuario = {
             id: resultado[0].insertId,
@@ -67,10 +67,10 @@ const buscarLeitor= async (req, res) => {
 
 const atualizarLeitor = async (req, res) => {
     const id = req.params.id;
-    const { nome, email, senha} = req.body;
+    const { nome, email, senha } = req.body;
 
     try{
-        const update = await db.query("UPDATE leitor SET  nome = ?, email =? senha =? WHERE id = ?", [nome, email,senha, id]);
+        const update = await db.query("UPDATE leitor SET nome =?, email =?, senha =? WHERE id =?", [nome, email, senha, id]);
 
         const info  = {msg:""}
 

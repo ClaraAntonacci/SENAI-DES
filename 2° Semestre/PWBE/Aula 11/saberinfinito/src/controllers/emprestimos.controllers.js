@@ -90,10 +90,10 @@ INNER JOIN leitor ON leitor.id = emprestimos.leitor_id WHERE emprestimos.livros_
 };
 
 const conta = async (req, res) => {
-    const ver = await db.query(`SELECT leitor.nome, COUNT(*) AS total_emprestimo FROM emprestimos
+const ver = await db.query(`SELECT leitor.nome, COUNT(*) AS total_emprestimo FROM emprestimos
 INNER JOIN livros ON livros.id = emprestimos.livros_id
 INNER JOIN leitor ON leitor.id = emprestimos.leitor_id GROUP BY leitor.id`);
-    res.json(ver[0][0]).end();
+res.json(ver[0]).end();
 };
 
 module.exports = {
