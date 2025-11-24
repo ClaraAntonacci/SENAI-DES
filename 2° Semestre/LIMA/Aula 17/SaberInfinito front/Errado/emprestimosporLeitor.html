@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empréstimos por Leitor</title>
+  <link rel="stylesheets" href="style.css">
+</head>
+<body>
+  <div class="relatorios-container">
+    <h1>Empréstimos de um Leitor</h1>
+    <label for="nomeLeitor">Nome do leitor:</label>
+    <input type="text" id="nomeLeitor" placeholder="Digite o nome do leitor">
+    <button>Gerar relatório</button>
+    <div id="resultado">
+      <table class="tabela-relatorio">
+        <tr>
+          <th>Leitor</th>
+          <th>Título do Livro</th>
+          <th>Data Empréstimo</th>
+          <th>Data Devolução</th>
+        </tr>
+        <tr>
+          <td>João Silva</td>
+          <td>A Revolução dos Bichos</td>
+          <td>05/11/2025</td>
+          <td>19/11/2025</td>
+        </tr>
+        <tr>
+          <td>João Silva</td>
+          <td>O Pequeno Príncipe</td>
+          <td>08/11/2025</td>
+          <td>22/11/2025</td>
+        </tr>
+      </table>
+    </div>
+    <a class="voltar-link" href="relatorios.html">Voltar</a>
+  </div>
+</body>
+</html>

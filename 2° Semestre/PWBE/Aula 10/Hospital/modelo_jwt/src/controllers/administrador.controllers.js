@@ -112,7 +112,7 @@ const AtualizarConsulta = async (req, res) => {
 };
 
 const listarRelatorios = async (req, res) => {
-    const lista = await db.query("SELECT * FROM consultas");
+    const lista = await db.query('SELECT consultas.id, users.nome AS paciente, especialidade.nome AS especialidade, consultas.data, consultas.status FROM consultas INNER JOIN users ON consultas.paciente_id = users.id INNER JOIN doctor ON consultas.medico_id = doctor.id INNER JOIN especialidade ON doctor.especialidade_id = especialidade.id;');
     res.json(lista[0]).end();
 };
 

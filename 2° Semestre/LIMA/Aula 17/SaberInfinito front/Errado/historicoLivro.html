@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico do Livro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="relatorios-container">
+    <h1>Histórico de Empréstimos de um Livro</h1>
+    <label for="tituloLivro">Título do livro:</label>
+    <input type="text" id="tituloLivro" placeholder="Digite o título do livro">
+    <button>Gerar histórico</button>
+    <div id="resultado">
+      <table class="tabela-relatorio">
+        <tr>
+          <th>Título</th>
+          <th>Leitor</th>
+          <th>Data Empréstimo</th>
+          <th>Data Devolução</th>
+        </tr>
+        <tr>
+          <td>O Hobbit</td>
+          <td>Lucas Pereira</td>
+          <td>12/11/2025</td>
+          <td>26/11/2025</td>
+        </tr>
+        <tr>
+          <td>O Hobbit</td>
+          <td>Fernanda Lima</td>
+          <td>01/10/2025</td>
+          <td>15/10/2025</td>
+        </tr>
+      </table>
+    </div>
+    <a class="voltar-link" href="relatorios.html">Voltar</a>
+  </div>
+</body>
+</html>
