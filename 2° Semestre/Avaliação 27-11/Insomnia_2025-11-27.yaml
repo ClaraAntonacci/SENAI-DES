@@ -1,0 +1,691 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1755784925109
+  modified: 1755784925109
+  description: ""
+collection:
+  - name: Biblioteca
+    meta:
+      id: fld_f840745dc00242fb9c6062dd3a8b9622
+      created: 1755785846227
+      modified: 1755785846227
+      sortKey: -1755785846227
+      description: ""
+    children:
+      - name: Usuarios
+        meta:
+          id: fld_11c48bc4bc2443e894ceb43d2668bec2
+          created: 1755785876597
+          modified: 1755785876597
+          sortKey: -1755785876597
+          description: ""
+      - name: Livros
+        meta:
+          id: fld_6eb5726822cb49e1a2a73d06d10bf474
+          created: 1756389483641
+          modified: 1756389483641
+          sortKey: -1756389483641
+          description: ""
+  - name: Escola
+    meta:
+      id: fld_f0a5fb74c64e451f86237e20db7c3668
+      created: 1756990924332
+      modified: 1756990924332
+      sortKey: -1756990924332
+      description: ""
+    children:
+      - name: Professores
+        meta:
+          id: fld_cfa4bbab40ae41e4a189625359edf8f8
+          created: 1756990941843
+          modified: 1756991017890
+          sortKey: -1756990945082
+          description: ""
+      - name: Turmas
+        meta:
+          id: fld_de42357af5ea481a8875c03dbd78dcb4
+          created: 1756992735601
+          modified: 1756992739810
+          sortKey: -1756990945182
+          description: ""
+      - name: Disciplinas
+        meta:
+          id: fld_912c7a4993eb429ba5a0621adcc90274
+          created: 1756994902151
+          modified: 1756995598654
+          sortKey: -1756990945282
+          description: ""
+      - name: Possui
+        meta:
+          id: fld_6f184e60bc254937a113df3b08d9e60d
+          created: 1756995611018
+          modified: 1756995615996
+          sortKey: -1756990945382
+          description: ""
+  - name: Loja
+    meta:
+      id: fld_761b8e1577ff41c99f1e64930729b482
+      created: 1758197864268
+      modified: 1758197864268
+      sortKey: -1758197864268
+      description: ""
+    children:
+      - name: Pedidos
+        meta:
+          id: fld_ed0fb752597c4bd18db2cd1ea788b08f
+          created: 1758197904885
+          modified: 1758197908022
+          sortKey: -1758197907985
+          description: ""
+      - name: Clientes
+        meta:
+          id: fld_0e8f96c5029646cf829bc5d5113760ab
+          created: 1758200050363
+          modified: 1758200052467
+          sortKey: -1758197908085
+          description: ""
+      - name: Produtos
+        meta:
+          id: fld_d438b406728e410592c5bad9b9fd609a
+          created: 1758200699237
+          modified: 1758200701696
+          sortKey: -1758197908185
+          description: ""
+  - name: locadora
+    meta:
+      id: fld_82eb4d82c9e140c19eec1e8db698fea2
+      created: 1758807643375
+      modified: 1758807643375
+      sortKey: -1758807643375
+      description: ""
+    children:
+      - name: Filmes
+        meta:
+          id: fld_c591b5e1dd7944ea90c92c571ba7285a
+          created: 1759403898984
+          modified: 1759403955309
+          sortKey: -1759155511986
+          description: ""
+      - name: Clientes
+        meta:
+          id: fld_79cffd65e3df49f3a164dac04e715a17
+          created: 1759403968501
+          modified: 1759403979115
+          sortKey: -1759155512086
+          description: ""
+      - name: Locações
+        meta:
+          id: fld_362b5beb39054a8da5c829a49d1334f6
+          created: 1759403992315
+          modified: 1759404011699
+          sortKey: -1759155512186
+          description: ""
+  - name: Floricultura
+    meta:
+      id: fld_611ae47aa1c04d57b0fe6e83d5f97722
+      created: 1760030169561
+      modified: 1760030175439
+      sortKey: -1760030169562
+      description: ""
+    children:
+      - name: adicionais
+        meta:
+          id: fld_831230547b7347149d2cac579280011f
+          created: 1760030206931
+          modified: 1760030209825
+          sortKey: -1760030182514
+          description: ""
+      - name: pedidos
+        meta:
+          id: fld_d75d8577fe6f48e2806fcaf69faad136
+          created: 1760031131472
+          modified: 1760031138971
+          sortKey: -1760030182614
+          description: ""
+      - name: Clientes
+        meta:
+          id: fld_5935e657cc444e898de84cf920f0669a
+          created: 1760031174272
+          modified: 1760031189199
+          sortKey: -1760030182714
+          description: ""
+      - name: Flores
+        meta:
+          id: fld_14aa5fe62ba84576ac279c917415ea88
+          created: 1760031184496
+          modified: 1760031191346
+          sortKey: -1760030182814
+          description: ""
+  - name: teste
+    meta:
+      id: fld_84639e04139d41bfba34720891991e34
+      created: 1760986680097
+      modified: 1760986680097
+      sortKey: -1760986680097
+      description: ""
+  - name: Hospital
+    meta:
+      id: fld_dbd001a7bdb746428d5537336f6ec924
+      created: 1761583158930
+      modified: 1761583158930
+      sortKey: -1761583158930
+      description: ""
+    children:
+      - name: Pacientes
+        meta:
+          id: fld_1081d80abbc94e93a7311ee9bbf82180
+          created: 1761822671028
+          modified: 1761822951665
+          sortKey: -1761585262664
+          description: ""
+      - name: Medico
+        meta:
+          id: fld_715d653be1d740969d7c3c339e1a39f5
+          created: 1761822768279
+          modified: 1761822954355
+          sortKey: -1761585262764
+          description: ""
+      - name: Consulta
+        meta:
+          id: fld_65a2ff1f1f94480184da91d552224a96
+          created: 1761822822801
+          modified: 1761822948495
+          sortKey: -1761585262564
+          description: ""
+      - name: Especialidade
+        meta:
+          id: fld_5e6faee99e094551a919bed63b05f80f
+          created: 1761822916377
+          modified: 1761822940015
+          sortKey: -1761585262464
+          description: ""
+  - name: saberinfinito
+    meta:
+      id: fld_a7bf9f8e2a3949fb9d22b9efbd7ea493
+      created: 1762799926642
+      modified: 1762799926642
+      sortKey: -1762799926642
+      description: ""
+    children:
+      - name: leitor
+        meta:
+          id: fld_f45fff5951d340d4b02eafe9bcf649dc
+          created: 1762799945304
+          modified: 1764012564662
+          sortKey: -1762799948511
+          description: ""
+      - name: emprestimos
+        meta:
+          id: fld_0200f573135144e39359f1441af3cdc2
+          created: 1762799958862
+          modified: 1762799964065
+          sortKey: -1762799948611
+          description: ""
+      - name: livros
+        meta:
+          id: fld_b5654560be1e4ea586c70abcd1188f1d
+          created: 1762799976163
+          modified: 1762799978686
+          sortKey: -1762799948711
+          description: ""
+  - name: Escola
+    meta:
+      id: fld_025cddf4cd1f4263a98a6556d4eacd5a
+      created: 1764245427669
+      modified: 1764245427669
+      sortKey: -1764245427669
+      description: ""
+    children:
+      - name: alunos
+        meta:
+          id: fld_af6a387de6294a68945028dd57fac129
+          created: 1764245453089
+          modified: 1764245456119
+          sortKey: -1764245456065
+          description: ""
+        children:
+          - url: http://localhost:3000/register
+            name: Cadastrar
+            meta:
+              id: req_0e8658e2d00c453d89578034f410f13f
+              created: 1764245463595
+              modified: 1764245563927
+              isPrivate: false
+              description: ""
+              sortKey: -1764245463595
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"nome": "Giovana Correa",
+                	"turma": "2A"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/listar
+            name: Listar alunos
+            meta:
+              id: req_c602837666404815a07f4003ed8bc1b7
+              created: 1764245555920
+              modified: 1764245729949
+              isPrivate: false
+              description: ""
+              sortKey: -1764245555920
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/atualizar/2
+            name: Atualizar alunos
+            meta:
+              id: req_12d8f31a3463417a8bd6667d6c2928a6
+              created: 1764245573610
+              modified: 1764245828465
+              isPrivate: false
+              description: ""
+              sortKey: -1764245573610
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                	{
+                	  "nome": "Bruno Pereira",
+                		"turma": "9A"
+                	}
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/delete/1
+            name: Excluir aluno
+            meta:
+              id: req_dd50c3b16ff441b19ef7ae4a37d9c7b5
+              created: 1764245682202
+              modified: 1764245967827
+              isPrivate: false
+              description: ""
+              sortKey: -1764245682202
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: equipamentos
+        meta:
+          id: fld_b4b457a88cce486f908cf115c96ca856
+          created: 1764248035556
+          modified: 1764248038082
+          sortKey: -1764245456165
+          description: ""
+        children:
+          - url: http://localhost:3000/register/e
+            name: Cadastrar
+            meta:
+              id: req_2d064e6e75874100b2596ef3e0f56761
+              created: 1764248044516
+              modified: 1764249668643
+              isPrivate: false
+              description: ""
+              sortKey: -1764248044516
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                		"nome": "Bola de Volei",
+                		"categoria": "Bola",
+                		"quantidade": 1
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/listar/e
+            name: Listar
+            meta:
+              id: req_80631e6931074786bfd0e823a160283c
+              created: 1764248111416
+              modified: 1764248128665
+              isPrivate: false
+              description: ""
+              sortKey: -1764248111416
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/atualizar/equipamentos/1
+            name: Atualizar
+            meta:
+              id: req_26b63519e53e4009a5763bda20c3fc61
+              created: 1764248177300
+              modified: 1764248300943
+              isPrivate: false
+              description: ""
+              sortKey: -1764248177300
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                		"nome": "Bola de Futebol",
+                		"categoria": "Bola",
+                		"quantidade": 20
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/delete/e/1
+            name: Excluir equipamento
+            meta:
+              id: req_276ca619ce0c40d8928ac9982c3312a6
+              created: 1764248351943
+              modified: 1764248397541
+              isPrivate: false
+              description: ""
+              sortKey: -1764248351943
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: locacoes
+        meta:
+          id: fld_87c4af0b6f854ab6a3ddd54d5d3439c2
+          created: 1764248739929
+          modified: 1764248742493
+          sortKey: -1764245456265
+          description: ""
+        children:
+          - url: http://localhost:3000/register/l
+            name: Cadastrar
+            meta:
+              id: req_9297b2a47dbe4cb2ac0970fed3635f65
+              created: 1764248746731
+              modified: 1764249728754
+              isPrivate: false
+              description: ""
+              sortKey: -1764248746731
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                	{
+                		"data_locacao": "2025-02-01",
+                		"data_devolucao": "2025-02-02",
+                		"id_aluno": 2,
+                		"id_equipamento": 3
+                	}
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/listar/l
+            name: Listar
+            meta:
+              id: req_6a32f21467f541c5843937e35199ed86
+              created: 1764248936136
+              modified: 1764249155640
+              isPrivate: false
+              description: ""
+              sortKey: -1764248936136
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/atualizar/locacoes/1
+            name: Atualizar
+            meta:
+              id: req_792cbd8e5e0946d2a1c5bff313130c34
+              created: 1764249089142
+              modified: 1764249281089
+              isPrivate: false
+              description: ""
+              sortKey: -1764249089142
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                		"data_locacao": "2025-02-01",
+                		"data_devolucao": "2025-02-06",
+                		"id_aluno": 1,
+                		"id_equipamento": 1
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/delete/l/6
+            name: Exluir
+            meta:
+              id: req_da9699a3208a422ebaa91d6add7177e2
+              created: 1764249323909
+              modified: 1764249392085
+              isPrivate: false
+              description: ""
+              sortKey: -1764249323909
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Relatorios
+        meta:
+          id: fld_82426df3216a4a0597330c238f8e48c2
+          created: 1764250537441
+          modified: 1764250541270
+          sortKey: -1764245456365
+          description: ""
+        children:
+          - url: http://localhost:3000/total/locacoes/categoria
+            name: Total de locações por categoria
+            meta:
+              id: req_24b14fb9ba16447e8b128c71872cd198
+              created: 1764250205974
+              modified: 1764250554874
+              isPrivate: false
+              description: ""
+              sortKey: -1764250549569
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/total/locacoes/aluno
+            name: Total de locações por aluno
+            meta:
+              id: req_c4f0b3767a1743fbb324f5e60d8a4352
+              created: 1764250359503
+              modified: 1764250552399
+              isPrivate: false
+              description: ""
+              sortKey: -1764250549469
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/total/locacoes/equipamento
+            name: Total de locações por equipamento
+            meta:
+              id: req_7af6dff3600a4aec85ba0ca972f3a19d
+              created: 1764250485382
+              modified: 1764250549423
+              isPrivate: false
+              description: ""
+              sortKey: -1764250549369
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1755785026033
+    modified: 1755785026033
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1755785025881
+    modified: 1755785025881
+    isPrivate: false
