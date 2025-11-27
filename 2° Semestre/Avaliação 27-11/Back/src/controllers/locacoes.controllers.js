@@ -3,6 +3,11 @@ const db = require("../data/connection");
 const cadastrarLocacao = async (req, res) => {
     const { data_locacao, data_devolucao, id_aluno, id_equipamento } = req.body;
 
+    
+    if (!data_locacao || !data_devolucao || !id_aluno || !id_equipamento) {
+        return res.status(400).json({ error:  "Todos os campos devem ser preenchidos." }).end();
+    }
+
     try {
 
         const resultado = await db.query("INSERT INTO locacoes VALUES (DEFAULT, ?, ?, ?, ?)", [data_locacao, data_devolucao, id_aluno, id_equipamento]);

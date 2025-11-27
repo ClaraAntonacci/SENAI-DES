@@ -3,6 +3,11 @@ const db = require("../data/connection");
 const cadastrarAluno = async (req, res) => {
     const { nome, turma } = req.body;
 
+    
+    if (!nome || !turma) {
+        return res.status(400).json({ error: "Todos os campos devem ser preenchidos." }).end();
+    }
+
     try {
 
         const resultado = await db.query("INSERT INTO alunos VALUES (DEFAULT, ?, ?)", [nome, turma]);

@@ -3,8 +3,8 @@ const db = require("../data/connection");
 const cadastrarEquipamento = async (req, res) => {
     const { nome, categoria, quantidade } = req.body;
 
-     if (quantidade < 1) {
-        return res.status(400).json({ error: "A quantidade do equipamento deve ser maior ou igual a 1." }).end();
+    if (!nome || !categoria || quantidade < 1 || quantidade === undefined) {
+        return res.status(400).json({ error: "A quantidade do equipamento deve ser maior ou igual a 1 e todos os campos devem ser preenchidos." }).end();
     }
 
     try {
