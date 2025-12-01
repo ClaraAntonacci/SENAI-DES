@@ -45,3 +45,9 @@ INSERT INTO locacoes VALUES
 (DEFAULT, '2025-02-03', '2025-02-03', 3, 2),
 (DEFAULT, '2025-02-04', '2025-02-05', 4, 5),
 (DEFAULT, '2025-02-04', '2025-02-04', 5, 4);
+
+SELECT equipamentos.categoria, COUNT(locacoes.id) AS total_locacoes FROM locacoes INNER JOIN equipamentos ON equipamentos.id = locacoes.id_equipamento GROUP BY equipamentos.categoria;
+
+SELECT alunos.nome, COUNT(locacoes.id) AS total_locacoes FROM locacoes INNER JOIN alunos ON alunos.id = locacoes.id_aluno GROUP BY alunos.nome;
+
+SELECT equipamentos.nome, COUNT(locacoes.id) AS total_locacoes FROM locacoes INNER JOIN equipamentos ON equipamentos.id = locacoes.id_equipamento GROUP BY equipamentos.nome;
