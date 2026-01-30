@@ -1,0 +1,39 @@
+autentica o git na web para usar o vs   
+git config --global user.name "ClaraAntonacci"
+
+git config --global user.email "andrzejewskyantonacciclara@gmail.com"
+
+clonar repositório
+git clone "url"
+
+// Atualizar repositório Web
+git add .
+git commit -m "*alguma coisa dentro"
+git push
+
+//Atualizar repositório local
+git pull
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
