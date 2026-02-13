@@ -64,19 +64,31 @@ function calcularTaxa(){
 
 function calcularMulta(){
     let mensalidade = Number(document.getElementById('mensalidade').value);
+    let diasAtraso = Number(document.getElementById('dias').value);
     let resultado = document.getElementById('resultado');
-    let desconto = 0;
+    let multa= 0;
 
-    if(preco > 2500){
-        desconto = preco * (15 / 100);
-    }else if(preco > 2000){
-        desconto = preco * (10 / 100);
-    }else if (preco > 1000){
-        desconto = preco * (8 / 100);
+    if(diasAtraso > 0){
+        multa = mensalidade * (2 / 100);
     }
 
-    let precoFinal = preco - desconto;
+    let precoFinal = mensalidade + multa;
 
     resultado.innerHTML = 
-    `Desconto de R$ ${desconto.toFixed(2)} <br>Preço Final R$ ${precoFinal.toFixed(2)}`;
+    `Multa de R$ ${multa.toFixed(2)} <br>Preço Final R$ ${precoFinal.toFixed(2)}`;
 }
+
+function calcularCashback(){
+    let valorCompra = Number(document.getElementById('valorCompra').value);
+    let resultado = document.getElementById('resultado');
+    let conta = 0;
+    let cashback = 0;
+
+    if(valorCompra > 300){
+        conta = valorCompra * (5 / 100);
+    }
+    cashback = valorCompra - conta;
+
+    resultado.innerHTML = 
+    `Cashback de R$ ${conta.toFixed(2)} <br>Valor liquido R$ ${cashback.toFixed(2)}`;
+}   
