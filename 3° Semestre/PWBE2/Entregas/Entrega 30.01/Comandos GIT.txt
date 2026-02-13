@@ -15,6 +15,9 @@ git push
 git pull
 
 
+npm i express cors dotenv prisma @prisma/client @prisma/adapter-mariadb
+
+
 
 
 
