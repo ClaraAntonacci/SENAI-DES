@@ -18,7 +18,7 @@ function calcularFrete(){
     let resultado = document.getElementById('resultado');
     let frete = 0;
 
-    if(valorCompra >= 150){
+    if(valorCompra >= 150){0
         frete =  0; 
     } else if(valorCompra < 150) {
         frete = 20; 
