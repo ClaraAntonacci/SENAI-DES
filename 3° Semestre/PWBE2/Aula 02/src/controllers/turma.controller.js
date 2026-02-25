@@ -56,5 +56,6 @@ module.exports = {
     novaTurma,
     listarTurmas,
     buscarTurma,
-    atualizarTurmas
+    atualizarTurmas,
+    apagarTurma
 }
