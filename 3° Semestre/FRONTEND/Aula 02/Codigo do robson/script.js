@@ -17,7 +17,7 @@ function salvarCliente(){
     const nascimento = document.getElementById("nascimento").value;
 
     if(!cpf || !nome){
-        alert("CPF E Nome são obrigatorios!");
+        alert("CPF e Nome são obrigatorios!");
         return;
     }
     const existe = clientes.find(cliente =>cliente.cpf === cpf);
