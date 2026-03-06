@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locadora</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Locadora de Filmes</h1>
+<button onclick="abrirModal()">+ Novo Filme</button>
+</header>
+
+<main>
+
+<label>Filtrar por gênero:</label>
+
+<select id="filtroGenero" onchange="filtrarGenero()">
+<option value="todos">Todos</option>
+<option value="Ação">Ação</option>
+<option value="Comédia">Comédia</option>
+<option value="Terror">Terror</option>
+<option value="Drama">Drama</option>
+<option value="Romance">Romance</option>
+</select>
+
+<table>
+
+<thead>
+<tr>
+<th>Imagem</th>
+<th>Nome</th>
+<th>Ano</th>
+<th>Diretor</th>
+<th>Gênero</th>
+<th>Ações</th>
+</tr>
+</thead>
+
+<tbody id="dados"></tbody>
+
+</table>
+
+</main>
+
+
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<h2>Novo Filme</h2>
+
+<input type="text" id="nome" placeholder="Nome do filme">
+
+<input type="number" id="ano" placeholder="Ano de lançamento">
+
+<input type="text" id="diretor" placeholder="Diretor">
+
+<select id="genero">
+<option value="">Selecione o gênero</option>
+<option value="Ação">Ação</option>
+<option value="Comédia">Comédia</option>
+<option value="Terror">Terror</option>
+<option value="Drama">Drama</option>
+<option value="Romance">Romance</option>
+</select>
+
+<input type="text" id="imagem" placeholder="Link da imagem do filme">
+
+<div class="modal-buttons">
+<button onclick="salvarFilme()">Salvar</button>
+<button onclick="fecharModal()">Cancelar</button>
+</div>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
