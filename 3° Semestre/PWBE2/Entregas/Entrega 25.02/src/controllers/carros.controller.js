@@ -22,22 +22,41 @@ const buscarCarros = async (req, res) => {
 const novoCarro = async (req, res) => {
     const carro = req.body;
 
-    let quantidadeCaracteries = carro.placa.trim().toUpperCase().length().replace()
+    // Placa obrigatória e padronizada
+    let placaSemEspaco = carro.placa.trim().replace(" ", "");
+    let placaMaiuscula = placaSemEspaco.toUpperCase();
+    let quantidadeCaracteres = placaMaiuscula.length;
+    let temEspaco = placaMaiuscula.includes(" ");
 
-    // let primeiraMaiuscula = carro.marca.modelo.trim().splith(" ") rennye falou que era para pular o 2
-    
+    // Ano com 4 dígitos
+    let quantidadeAno = carro.ano.length;
+    let anoSeparado = carro.ano.split("");
+    let temLetraAno = anoSeparado.some(c => isNaN(c));
 
+    //  Não permitir placa duplicada
+    const carros = await prisma.carros.findMany();
+    let placaExiste = carros.some(c => c.placa.toUpperCase() === placaMaiuscula);
 
-    if (carro.placa != "" && quantidadeCaracteries === 7) {
+    if (
+        carro.placa != "" &&
+        quantidadeCaracteres === 7 &&
+        temEspaco == false &&
+        quantidadeAno === 4 &&
+        temLetraAno == false &&
+        placaExiste == false
+    ) {
+
+        carro.placa = placaMaiuscula;
+
         const ncarro = await prisma.carros.create({
             data: carro
-
         });
-        res.json(ncarro).status(201).end();
-    }else {
-        res.json({err: "Placa Obrigatoria"}).status(500).end();
-    }
 
+        res.json(ncarro).status(201).end();
+
+    } else {
+        res.json({ err: "Erro ao cadastrar carro" }).status(500).end();
+    }
 };
 
 const atualizarCarro = async (req, res) => {
@@ -52,26 +71,6 @@ const atualizarCarro = async (req, res) => {
     res.json(carros).staus(200).end();
 };
 
-
-// const atualizarCarro = async (req, res) => {
-//     const { id } = req.params;
-//     const dados = req.body;
-
-//     let tamanhoNome = dados.nome.trim().split(" ").length();
-
-//     let temarroba = dados.email.includes("@");
-
-//     if (tamanhoNome >= 2 && temarroba == true) {
-//         const carros = await prisma.carros.update({
-//             where: { id },
-//             data: dados
-//         });
-
-//         res.json(carros).staus(200).end();
-//     }else {
-        
-//     }
-// };
 
 const apagarCarro = async (req, res) => {
     const { id } = req.params;

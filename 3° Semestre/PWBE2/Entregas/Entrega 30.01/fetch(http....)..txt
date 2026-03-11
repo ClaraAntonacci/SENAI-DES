@@ -1,0 +1,7 @@
+fetch("http://....").
+then((data) => {
+	data
+});
+
+npx backend-aula -models // cria arquivos de acordo com o prisma
+npx backend-aula -insomnia // cria arquivos no insominia
