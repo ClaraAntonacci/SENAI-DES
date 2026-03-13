@@ -4,7 +4,7 @@ const router = express.Router();
 
 const listarController = require("../controllers/carros.controller");
 
-router.post("/carros/cadastrar", listarController.novoCarro);
+router.post("/carro/cadastrar", listarController.novoCarro);
 router.get("/carros/listar", listarController.listarCarros);
 router.get("/carros/buscar/:id", listarController.buscarCarros);
 router.put("/carros/atualizar/:id", listarController.atualizarCarro);

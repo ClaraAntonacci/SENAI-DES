@@ -29,7 +29,9 @@ const novoCliente = async (req, res) => {
     let temNumeroNome = letrasNome.some(l => !isNaN(l) && l != " ");
 
     // cpf apenas números
-    let cpfFinal = cliente.cpf.replace(/\D/g, "");
+    let cpfSemPonto = cliente.cpf.replace(".", "");
+    let cpfSemPonto2 = cpfSemPonto.replace(".", "");
+    let cpfFinal = cpfSemPonto2.replace("-", "");
     let tamanhoCpf = cpfFinal.length;
 
     // email válido
@@ -74,55 +76,12 @@ const atualizarCliente = async (req, res) => {
     const { id } = req.params;
     const dados = req.body;
 
-    // nome completo
-    let nomeSemEspaco = dados.nome.trim();
-    let partesNome = nomeSemEspaco.split(" ");
-    let quantidadePalavras = partesNome.length;
+    const cliente = await prisma.clientes.update({
+        where: { id },
+        data: dados
+    });
 
-    // nome não pode ter número
-    let letrasNome = dados.nome.split("");
-    let temNumeroNome = letrasNome.some(l => !isNaN(l) && l != " ");
-
-    // cpf apenas números
-    let cpfFinal = dados.cpf.replace(/\D/g, "");
-    let tamanhoCpf = cpfFinal.length;
-
-    // email válido
-    let emailMinusculo = dados.email.toLowerCase();
-    let temArroba = emailMinusculo.includes("@");
-    let temPonto = emailMinusculo.includes(".");
-
-    // email duplicado
-    const clientes = await prisma.clientes.findMany();
-    let emailExiste = clientes.some(c => c.email === emailMinusculo && c.id != id);
-
-    // cnh começa com número
-    let cnhSeparada = dados.cnh.split("");
-    let primeiroNumero = cnhSeparada[0];
-    let primeiroEhNumero = !isNaN(primeiroNumero);
-
-    if (
-        quantidadePalavras >= 2 &&
-        temNumeroNome == false &&
-        tamanhoCpf === 11 &&
-        temArroba == true &&
-        temPonto == true &&
-        emailExiste == false &&
-        primeiroEhNumero == true
-    ) {
-
-        dados.email = emailMinusculo;
-        dados.cpf = cpfFinal;
-
-        const cliente = await prisma.clientes.update({
-            where: { id },
-            data: dados
-        });
-
-        res.json(cliente).status(200).end();
-    } else {
-        res.json({ err: "Erro ao atualizar cliente" }).status(500).end();
-    }
+    res.json(cliente).status(200).end();
 };
 
 const apagarCliente = async (req, res) => {
