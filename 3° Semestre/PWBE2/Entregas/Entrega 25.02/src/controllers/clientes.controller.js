@@ -2,18 +2,17 @@ const prisma = require("../data/prisma");
 
 const listarClientes = async (req, res) => {
     const clientes = await prisma.clientes.findMany();
-
-    res.json(clientes).status(200).end();
+    return res.status(200).json(clientes);
 };
 
 const buscarClientes = async (req, res) => {
-    const { id } = req.params;
+    const id = Number(req.params.id);
 
     const cliente = await prisma.clientes.findUnique({
         where: { id }
     });
 
-    res.json(cliente).status(200).end();
+    return res.status(200).json(cliente);
 };
 
 const novoCliente = async (req, res) => {
@@ -21,16 +20,16 @@ const novoCliente = async (req, res) => {
 
     // nome completo
     let nomeSemEspaco = cliente.nome.trim();
-    let partesNome = nomeSemEspaco.split(" ");
-    let quantidadePalavras = partesNome.length;
+    let nomeSeparado = nomeSemEspaco.split(" ");
+    let quantidadePalavras = nomeSeparado.length;
 
-    // nome não pode ter número
-    let letrasNome = cliente.nome.split("");
-    let temNumeroNome = letrasNome.some(l => !isNaN(l) && l != " ");
+    // nome não pode ter número (regra desafio)
+    let nomeSeparadoLetra = cliente.nome.split("");
+    let temNumeroNome = nomeSeparadoLetra.some(l => l >= "0" && l <= "9");
 
     // cpf apenas números
-    let cpfFinal = cliente.cpf.replace(/\D/g, "");
-    let tamanhoCpf = cpfFinal.length;
+    let cpfSemLetra = cliente.cpf.replace(/\D/g, "");
+    let quantidadeCpf = cpfSemLetra.length;
 
     // email válido
     let emailMinusculo = cliente.email.toLowerCase();
@@ -39,53 +38,53 @@ const novoCliente = async (req, res) => {
 
     // email duplicado
     const clientes = await prisma.clientes.findMany();
-    let emailExiste = clientes.some(c => c.email === emailMinusculo);
+    let emailJaExiste = clientes.some(c => c.email === emailMinusculo);
 
     // cnh começa com número
     let cnhSeparada = cliente.cnh.split("");
-    let primeiroNumero = cnhSeparada[0];
-    let primeiroEhNumero = !isNaN(primeiroNumero);
+    let primeiroCaractere = cnhSeparada[0];
+    let primeiroEhNumero = primeiroCaractere >= "0" && primeiroCaractere <= "9";
 
     if (
+        nomeSemEspaco != "" &&
         quantidadePalavras >= 2 &&
         temNumeroNome == false &&
-        tamanhoCpf === 11 &&
+        quantidadeCpf === 11 &&
         temArroba == true &&
         temPonto == true &&
-        emailExiste == false &&
+        emailJaExiste == false &&
         primeiroEhNumero == true
     ) {
 
         cliente.email = emailMinusculo;
-        cliente.cpf = cpfFinal;
+        cliente.cpf = cpfSemLetra;
 
-        const ncliente = await prisma.clientes.create({
+        const clienteNovo = await prisma.clientes.create({
             data: cliente
         });
 
-        res.json(ncliente).status(201).end();
-
+        return res.status(201).json(clienteNovo);
     } else {
-        res.json({ err: "Erro ao cadastrar cliente" }).status(500).end();
+        return res.status(400).json({ err: "Erro ao cadastrar cliente" });
     }
 };
 
 const atualizarCliente = async (req, res) => {
-    const { id } = req.params;
+    const id = Number(req.params.id);
     const dados = req.body;
 
     // nome completo
     let nomeSemEspaco = dados.nome.trim();
-    let partesNome = nomeSemEspaco.split(" ");
-    let quantidadePalavras = partesNome.length;
+    let nomeSeparado = nomeSemEspaco.split(" ");
+    let quantidadePalavras = nomeSeparado.length;
 
     // nome não pode ter número
-    let letrasNome = dados.nome.split("");
-    let temNumeroNome = letrasNome.some(l => !isNaN(l) && l != " ");
+    let nomeSeparadoLetra = dados.nome.split("");
+    let temNumeroNome = nomeSeparadoLetra.some(l => l >= "0" && l <= "9");
 
     // cpf apenas números
-    let cpfFinal = dados.cpf.replace(/\D/g, "");
-    let tamanhoCpf = cpfFinal.length;
+    let cpfSemLetra = dados.cpf.replace(/\D/g, "");
+    let quantidadeCpf = cpfSemLetra.length;
 
     // email válido
     let emailMinusculo = dados.email.toLowerCase();
@@ -94,45 +93,48 @@ const atualizarCliente = async (req, res) => {
 
     // email duplicado
     const clientes = await prisma.clientes.findMany();
-    let emailExiste = clientes.some(c => c.email === emailMinusculo && c.id != id);
+    let emailJaExiste = clientes.some(c => 
+        c.email === emailMinusculo && c.id != id
+    );
 
     // cnh começa com número
     let cnhSeparada = dados.cnh.split("");
-    let primeiroNumero = cnhSeparada[0];
-    let primeiroEhNumero = !isNaN(primeiroNumero);
+    let primeiroCaractere = cnhSeparada[0];
+    let primeiroEhNumero = primeiroCaractere >= "0" && primeiroCaractere <= "9";
 
     if (
+        nomeSemEspaco != "" &&
         quantidadePalavras >= 2 &&
         temNumeroNome == false &&
-        tamanhoCpf === 11 &&
+        quantidadeCpf === 11 &&
         temArroba == true &&
         temPonto == true &&
-        emailExiste == false &&
+        emailJaExiste == false &&
         primeiroEhNumero == true
     ) {
 
         dados.email = emailMinusculo;
-        dados.cpf = cpfFinal;
+        dados.cpf = cpfSemLetra;
 
-        const cliente = await prisma.clientes.update({
+        const clienteAtualizado = await prisma.clientes.update({
             where: { id },
             data: dados
         });
 
-        res.json(cliente).status(200).end();
+        return res.status(200).json(clienteAtualizado);
     } else {
-        res.json({ err: "Erro ao atualizar cliente" }).status(500).end();
+        return res.status(400).json({ err: "Erro ao atualizar cliente" });
     }
 };
 
 const apagarCliente = async (req, res) => {
-    const { id } = req.params;
+    const id = Number(req.params.id);
 
     const cliente = await prisma.clientes.delete({
         where: { id }
     });
 
-    res.json(cliente).status(200).end();
+    return res.status(200).json(cliente);
 };
 
 module.exports = {

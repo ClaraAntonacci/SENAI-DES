@@ -2,18 +2,17 @@ const prisma = require("../data/prisma");
 
 const listarCarros = async (req, res) => {
     const carros = await prisma.carros.findMany();
-
-    res.json(carros).status(200).end();
+    return res.status(200).json(carros);
 };
 
 const buscarCarros = async (req, res) => {
-    const { id } = req.params;
+    const id = Number(req.params.id);
 
     const carro = await prisma.carros.findUnique({
         where: { id }
     });
 
-    res.json(carro).status(200).end();
+    return res.status(200).json(carro);
 };
 
 const novoCarro = async (req, res) => {
@@ -24,10 +23,6 @@ const novoCarro = async (req, res) => {
     let placaMaiuscula = placaSemEspaco.toUpperCase();
     let quantidadeCaracteres = placaMaiuscula.length;
     let temEspaco = placaMaiuscula.includes(" ");
-
-    // Marca e modelo com primeira letra maiúscula
-    let marcaCapitalizada = carro.marca.trim().split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(" ");
-    let modeloCapitalizado = carro.modelo.trim().split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(" ");
 
     // Ano com 4 dígitos
     let quantidadeAno = carro.ano.length;
@@ -50,22 +45,20 @@ const novoCarro = async (req, res) => {
     ) {
 
         carro.placa = placaMaiuscula;
-        carro.marca = marcaCapitalizada;
-        carro.modelo = modeloCapitalizado;
 
         const ncarro = await prisma.carros.create({
             data: carro
         });
 
-        res.json(ncarro).status(201).end();
+        return res.status(201).json(ncarro);
 
     } else {
-        res.json({ err: "Erro ao cadastrar carro" }).status(500).end();
+        return res.status(400).json({ err: "Erro ao cadastrar carro" });
     }
 };
 
 const atualizarCarro = async (req, res) => {
-    const { id } = req.params;
+    const id = Number(req.params.id);
     const dados = req.body;
 
     // Placa obrigatória e padronizada
@@ -74,10 +67,6 @@ const atualizarCarro = async (req, res) => {
     let quantidadeCaracteres = placaMaiuscula.length;
     let temEspaco = placaMaiuscula.includes(" ");
 
-    // Marca e modelo com primeira letra maiúscula
-    let marcaCapitalizada = dados.marca.trim().split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(" ");
-    let modeloCapitalizado = dados.modelo.trim().split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(" ");
-
     // Ano com 4 dígitos
     let quantidadeAno = dados.ano.length;
     let anoSeparado = dados.ano.split("");
@@ -85,7 +74,9 @@ const atualizarCarro = async (req, res) => {
 
     // Não permitir placa duplicada
     const carros = await prisma.carros.findMany();
-    let placaExiste = carros.some(c => c.placa.toUpperCase() === placaMaiuscula && c.id != id);
+    let placaExiste = carros.some(c => 
+        c.placa.toUpperCase() === placaMaiuscula && c.id != id
+    );
 
     if (
         dados.placa != "" &&
@@ -99,29 +90,26 @@ const atualizarCarro = async (req, res) => {
     ) {
 
         dados.placa = placaMaiuscula;
-        dados.marca = marcaCapitalizada;
-        dados.modelo = modeloCapitalizado;
 
-        const carros = await prisma.carros.update({
+        const carroAtualizado = await prisma.carros.update({
             where: { id },
             data: dados
         });
 
-        res.json(carros).status(200).end();
+        return res.status(200).json(carroAtualizado);
     } else {
-        res.json({ err: "Erro ao atualizar carro" }).status(500).end();
+        return res.status(400).json({ err: "Erro ao atualizar carro" });
     }
 };
 
-
 const apagarCarro = async (req, res) => {
-    const { id } = req.params;
+    const id = Number(req.params.id);
 
     const carro = await prisma.carros.delete({
         where: { id }
     });
 
-    res.json(carro).status(200).end();
+    return res.status(200).json(carro);
 };
 
 module.exports = {
@@ -130,4 +118,4 @@ module.exports = {
     buscarCarros,
     atualizarCarro,
     apagarCarro
-}
+};
