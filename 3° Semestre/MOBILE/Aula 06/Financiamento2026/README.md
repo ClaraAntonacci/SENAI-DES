@@ -1,43 +1,39 @@
-# financiamento2026
+#  Simulador de Financiamento - bitola2026
+Aplicativo desenvolvido em Flutter para simular financiamentos de forma simples e prática.
 
-Sobre o projeto
-O Financiamentos2026 é um aplicativo desenvolvido para simular financiamentos de bens, como carros, imóveis e eletrodomésticos.
+##  Funcionalidades
+- Inserir valor do financiamento  
+- Definir taxa de juros mensal (ex: 0.02)  
+- Escolher número de parcelas  
+- Adicionar taxas e custos extras  
+- Calcular:  
+  - Valor da parcela  
+  - Valor total a ser pago  
 
-O usuário informa:
+##  Telas do App
 
-Valor do financiamento
-Taxa de juros mensal
-Número de parcelas
-Taxas adicionais
-E o sistema retorna:
+### Tela 1
+Tela inicial com campos vazios para preenchimento dos dados do financiamento.
 
-Valor da parcela
-Valor total a ser pago
-Prints das telas
-  
+![Tela 1](assets/img/tela1.png)
 
-Funcionalidades
-Cálculo das parcelas
-Cálculo do valor total
-Inclusão de taxas adicionais
-Tecnologias utilizadas
-Flutter
-Dart
-Como executar o projeto
-git clone https://github.com/biaams-sys/financiamentos2026.git
-terminal do vscode
+### Tela 2
+Tela com os campos preenchidos (valor, taxa de juros, número de parcelas e custos adicionais).
 
-flutter pub get
+![Tela 2](assets/img/tela2.png)
+
+### Tela 3
+Tela de resultado exibida em um pop-up com o valor da parcela e o total a ser pago.
+
+![Tela 3](assets/img/tela3.png)
+
+##  Tecnologias utilizadas
+- Flutter  
+- Dart  
+
+##  Estrutura de imagens
+assets/img/
+
+##  Como executar
+flutter pub get  
 flutter run
-Estrutura do projeto
-Financiamentos2026/
-├── assets/
-│   ├── tela1.png
-│   ├── tela2.png
-│   └── tela3.png
-├── lib/
-    ├── main.dart
-├── pubspec.yaml
-└── README.md
-Autora
-Clara Andrzejewsky Antonacci

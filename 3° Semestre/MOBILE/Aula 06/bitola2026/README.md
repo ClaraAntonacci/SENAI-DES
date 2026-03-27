@@ -1,8 +1,8 @@
-# 📱 Simulador de Financiamento - bitola2026
+# Simulador de Financiamento - bitola2026
 
 Aplicativo desenvolvido em Flutter para simular financiamentos de forma simples e prática.
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 
 - Inserir valor do financiamento  
 - Definir taxa de juros mensal  
@@ -12,7 +12,7 @@ Aplicativo desenvolvido em Flutter para simular financiamentos de forma simples 
   - Valor da parcela  
   - Valor total a pagar  
 
-## 🖼️ Telas do App
+## Telas do App
 
 ### Tela 1
 ![Tela 1](assets/img/tela1.png)
@@ -23,16 +23,16 @@ Aplicativo desenvolvido em Flutter para simular financiamentos de forma simples 
 ### Tela 3
 ![Tela 3](assets/img/tela3.png)
 
-## 🛠️ Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - Flutter  
 - Dart  
 
-## 📂 Estrutura de imagens
+##  Estrutura de imagens
 
 assets/img/
 
-## ▶️ Como executar
+##  Como executar
 
 flutter pub get  
 flutter run
