@@ -30,4 +30,9 @@ Aplicativo desenvolvido em Flutter para simular financiamentos de forma simples 
 
 ## 📂 Estrutura de imagens
 
-As imagens estão localizadas em:
+assets/img/
+
+## ▶️ Como executar
+
+flutter pub get  
+flutter run
