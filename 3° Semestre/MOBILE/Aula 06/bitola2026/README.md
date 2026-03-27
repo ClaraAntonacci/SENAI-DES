@@ -1,49 +1,33 @@
-# bitola2026
+# 📱 Simulador de Financiamento - bitola2026
 
-Sobre o projeto
-O Bitola de Fios é um aplicativo desenvolvido para auxiliar no dimensionamento correto de condutores elétricos em instalações.
+Aplicativo desenvolvido em Flutter para simular financiamentos de forma simples e prática.
 
-A aplicação foi criada com base nos conceitos ensinados em instalações elétricas, permitindo calcular a bitola adequada do fio de acordo com as condições informadas.
+## 🚀 Funcionalidades
 
-O usuário informa:
+- Inserir valor do financiamento  
+- Definir taxa de juros mensal  
+- Escolher número de parcelas  
+- Adicionar taxas e custos extras  
+- Calcular:
+  - Valor da parcela  
+  - Valor total a pagar  
 
-Corrente elétrica (A)
-Distância do circuito (m)
-E o sistema retorna:
+## 🖼️ Telas do App
 
-Bitola do fio para 110V
-Bitola do fio para 220V
-Prints das telas
-  
+### Tela 1
+![Tela 1](assets/img/tela1.png)
 
-Funcionalidades
-Cálculo da bitola do fio
-Suporte para 110V e 220V
-Consideração da distância do circuito
-Interface simples e funcional
-Tecnologias utilizadas
-Flutter
-Dart
-Como executar o projeto
-git clone https://github.com/biaams-sys/bitola2026.git
-terminal do vscode
+### Tela 2
+![Tela 2](assets/img/tela2.png)
 
-flutter pub get
-flutter run
-Estrutura do projeto
-Bitola2026/
-├── assets/
-│   ├── tela1.png
-│   ├── tela2.png
-│   └── tela3.png
-├── lib/
-│   ├── main.dart
-├── pubspec.yaml
-└── README.md
-Aprendizados
-Aplicação de conceitos de instalações elétricas
-Cálculo de dimensionamento de condutores
-Desenvolvimento de interfaces no Flutter
-Organização de projetos
-Autora
-Clara Andrzejewsky Antonacci
+### Tela 3
+![Tela 3](assets/img/tela3.png)
+
+## 🛠️ Tecnologias utilizadas
+
+- Flutter  
+- Dart  
+
+## 📂 Estrutura de imagens
+
+As imagens estão localizadas em:
