@@ -64,6 +64,6 @@ flutter run
 - Exibição de resultados em pop-up  
 - Organização de projetos  
 
-## Autor(a)
+## Autora
 
 Clara Andrzejewsky Antonacci
