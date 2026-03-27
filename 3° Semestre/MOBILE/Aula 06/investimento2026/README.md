@@ -1,65 +1,71 @@
-# calculadora_bitola2026
+# Simulador de Investimento - investimento2026
+
+Aplicativo desenvolvido em Flutter para simular o crescimento de um investimento ao longo do tempo.
 
 ## Sobre o projeto
-A Calculadora de Bitola é um aplicativo desenvolvido para auxiliar no dimensionamento de cabos elétricos em instalações residenciais.
 
-A proposta é permitir que o usuário informe a distância do circuito e a corrente elétrica, e o sistema calcule automaticamente a bitola recomendada do cabo.
+O Simulador de Investimento permite que o usuário visualize quanto um valor investido mensalmente pode crescer ao longo do tempo, com e sem a aplicação de juros.
+
+A proposta é mostrar uma alternativa ao financiamento, incentivando o planejamento financeiro por meio de investimentos.
 
 O usuário informa:
 
-Distância em metros  
-Corrente elétrica (em amperes)  
+Valor mensal a ser investido  
+Número de meses  
+Taxa de juros mensal  
 
 E o sistema retorna:
 
-Bitola recomendada para 12V  
-Bitola recomendada para 220V  
-
-## Prints das telas
-
-### Tela 1
-![Tela 1](assets/img/tela1%20(1).png)
-
-### Tela 2
-![Tela 2](assets/img/tela2%20(2).png)
-
-### Tela 3
-![Tela 3](assets/img/tela3%20(1).png)
+Valor total sem juros  
+Valor total com juros compostos  
 
 ## Funcionalidades
-- Cálculo da bitola de cabos elétricos  
-- Suporte para diferentes tensões (12V e 220V)  
+
+- Inserir valor mensal de investimento  
+- Definir período em meses  
+- Informar taxa de juros mensal  
+- Cálculo de investimento sem juros  
+- Cálculo com juros compostos  
 - Interface simples e intuitiva  
-- Entrada de dados rápida e prática  
 
-##  Tecnologias utilizadas
-Flutter  
-Dart  
+## Telas do App
 
-## Como executar o projeto
-git clone https://github.com/seu-usuario/calculadora_bitola2026.git  
-terminal do vscode  
+### Tela 1
+Tela inicial com campos vazios para preenchimento dos dados do investimento.
+
+![Tela 1](assets/img/tela1.png)
+
+### Tela 2
+Tela com os valores preenchidos (investimento mensal, meses e taxa de juros).
+
+![Tela 2](assets/img/tela2.png)
+
+### Tela 3
+Exibição do resultado em um pop-up com o valor total sem juros e com juros compostos.
+
+![Tela 3](assets/img/tela3.png)
+
+## Tecnologias utilizadas
+
+- Flutter  
+- Dart  
+
+## Estrutura de imagens
+
+assets/img/
+
+## Como executar
 
 flutter pub get  
 flutter run  
 
-## Estrutura do projeto
-CalculadoraBitola/
-├── assets/  
-│   └── img/  
-│       ├── tela1.png  
-│       ├── tela2.png  
-│       └── tela3.png  
-├── lib/  
-│   └── main.dart  
-├── pubspec.yaml  
-└── README.md  
-
 ## Aprendizados
-- Cálculo aplicado à elétrica residencial  
+
+- Cálculo de juros compostos  
+- Simulação de investimentos  
 - Manipulação de inputs no Flutter  
 - Exibição de resultados em pop-up  
-- Estruturação de aplicativos  
 
 ## Autor(a)
-- Clara Andrzejewsky Antonacci
+
+Clara Andrzejewsky Antonacci
