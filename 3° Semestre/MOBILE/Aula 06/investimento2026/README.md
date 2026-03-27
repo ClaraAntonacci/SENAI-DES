@@ -18,13 +18,13 @@ Bitola recomendada para 220V
 ## Prints das telas
 
 ### Tela 1
-![Tela 1](assets/img/tela1 (1).png)
+![Tela 1](assets/img/tela1%20(1).png)
 
 ### Tela 2
-![Tela 2](assets/img/tela2 (2).png)
+![Tela 2](assets/img/tela2%20(2).png)
 
 ### Tela 3
-![Tela 3](assets/img/tela3 (1).png)
+![Tela 3](assets/img/tela3%20(1).png)
 
 ## Funcionalidades
 - Cálculo da bitola de cabos elétricos  
