@@ -66,6 +66,6 @@ flutter run
 - Manipulação de inputs no Flutter  
 - Exibição de resultados em pop-up  
 
-## Autora
+## Autor(a)
 
 Clara Andrzejewsky Antonacci
