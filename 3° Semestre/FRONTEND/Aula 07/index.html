@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas Dona Benta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://receitastanahora.com.br/wp-content/uploads/2021/09/receitas-ta-na-hora-logotipo.png" alt="Logo">
+            <h1>Receitas Dona Benta</h1>
+        </div>
+
+        <button onclick="abrirModal()">+ Receita</button>
+    </header>
+
+    <main></main>
+
+    
+    <div id="modal" class="modal">
+        <div class="conteudo-modal">
+            <h2>Nova Receita</h2>
+
+            <input type="text" id="nome" placeholder="Nome da receita">
+            <input type="text" id="img" placeholder="URL da imagem">
+            <textarea id="ingredientes" placeholder="Ingredientes"></textarea>
+            <textarea id="modoFazer" placeholder="Modo de preparo"></textarea>
+
+            <button onclick="salvarReceita()">Salvar</button>
+            <button onclick="fecharModal()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
