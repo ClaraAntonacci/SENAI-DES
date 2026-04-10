@@ -2,29 +2,49 @@
 
 Splash
 
-Exemplo de uma Splash Screen com animação de entrada com Flutter, permitindo inserir nome e idade e exibir essas informações em outra tela.
+Exemplo de uma Splash Screen com animação de entrada com Flutter
 
-Tecnologias  
+---
+
+##  Telas
+
+Splash  
+![Splash](assets/splash.png)
+
+Home  
+![Home](assets/home.png)
+
+---
+
+## Tecnologias
+
 Flutter  
-VSCode  
+VsCode  
 Android Studio  
 
-Efeitos        WidGets  
-Movimento (cima → baixo)    Transform.translate  
+---
+
+## Efeitos        WidGets
+
+Movimento (cima → baixo)        Transform.translate  
 Imagens        Image.asset()  
-Assincronicidade    async  
-Controle de tempo    AnimationController  
-Compartilhamento de dados entre telas (shared, "LocalStorage")    Biblioteca: shared_preferences.dart (SharedPreferences)  
-Conversão de dados    json.encode(), json.decode()  
+Assincronicidade        async  
+Controle de tempo        AnimationController  
+Compartilhamento de dados entre telas (shared, "LocalStorage")        Biblioteca: shared_preferences.dart (SharedPreferences)  
+Conversão de dados        json.encode(), json.decode()  
+
+---
 
 Splash        Home  
 Splash        Home  
 
-Para testar  
+---
+
+## Para testar
 
 1 Clone o repositório  
 
-2 Abra com VSCode, abra o terminal (CTRL + "), execute o comando:  
+2 Abra com VsCode, abra o terminal CTRL + " e execute o comando:  
 flutter pub get  
 
 3 Navegue até o arquivo lib/main.dart e dê play ou execute o comando:  
@@ -32,5 +52,8 @@ flutter run
 
 4 Escolha navegador ou um emulador para testar  
 
+---
+
 O projeto irá abrir a tela de Splash com uma animação de entrada (imagem descendo de cima para o centro da tela), permitindo inserir nome e idade.  
+
 Após clicar em entrar, os dados serão armazenados e exibidos na tela Home.
