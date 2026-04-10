@@ -9,10 +9,10 @@ Exemplo de uma Splash Screen com animação de entrada com Flutter
 ##  Telas
 
                            
-|||
-|:-:|:-:|
-|![Home](assets/img/home.png)|[Splash](assets/img/splash.png)|
-|Home|Splash|
+| Home | Splash |
+|:----:|:------:|
+| ![Home](assets/img/home.png) | ![Splash](assets/img/splash.png) |
+| Home | Splash |
 
 
 ---
