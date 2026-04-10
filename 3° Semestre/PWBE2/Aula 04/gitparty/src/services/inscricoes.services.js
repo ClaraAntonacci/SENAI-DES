@@ -41,18 +41,18 @@ const excluirInscricao = async (usuarioId, eventoId) => {
   if (diferencaHoras > 0 && diferencaHoras < 24) {
     throw new Error("Não é possível cancelar a inscrição com menos de 24 horas para o evento.");
   }
-
+  
   await prisma.inscricoes.update({
     where: { id: inscricao.id },
     data: { status: "CANCELADA" },
   });
 
+  await atualizarStatusInscricao(eventoId);
+
   return inscricao;
 };
 
-const atualizarStatusInscricao = async (eventoId, statusAntigo) => {
-  if (statusAntigo !== "CONFIRMADA") return;
-
+const atualizarStatusInscricao = async (eventoId) => {
   const proximo = await prisma.inscricoes.findFirst({
     where: { eventosId: eventoId, status: "LISTA_ESPERA" },
     orderBy: { data_incricao: "asc" },

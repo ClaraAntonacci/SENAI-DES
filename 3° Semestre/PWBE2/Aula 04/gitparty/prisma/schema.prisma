@@ -31,7 +31,10 @@ model Eventos {
   capacidade_maxima Int
   status            StatusEvento @default(ATIVO)
 
-  inscricoes Inscricoes[]
+  imagemId          Int?
+  imagem            Imagem? @relation(fields: [imagemId], references: [id])
+
+  inscricoes        Inscricoes[]
 }
 
 model Inscricoes {
@@ -42,6 +45,17 @@ model Inscricoes {
   eventosId     Int
   usuarios      Usuarios       @relation(fields: [usuariosId], references: [id])
   usuariosId    Int
+}
+
+model Imagem {
+  id            Int        @id @default(autoincrement())
+  nomeOriginal  String
+  nomeArquivo   String
+  mimeType      String
+  path          String
+  data          DateTime   @default(now())
+
+  eventos Eventos[]
 }
 
 enum StatusInscricao {

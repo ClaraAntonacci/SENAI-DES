@@ -43,14 +43,16 @@ const atualizar = async (req, res) => {
 const excluir = async (req, res) => {
   try {
     const { id } = req.params;
-    const inscricao = await prisma.inscricoes.findUnique({ where: { id: Number(id) } });
+
+    const inscricao = await prisma.inscricoes.findUnique({
+      where: { id: Number(id) },
+    });
 
     if (!inscricao) {
       return res.status(404).json({ erro: "Inscrição não encontrada." });
     }
 
-    const cancel = await excluirInscricao(inscricao.usuariosId, inscricao.eventosId);
-    await atualizarStatusInscricao(inscricao.eventosId, cancel.status);
+    await excluirInscricao(inscricao.usuariosId, inscricao.eventosId);
 
     return res.status(200).json({ mensagem: "Cancelada com sucesso" });
   } catch (error) {
