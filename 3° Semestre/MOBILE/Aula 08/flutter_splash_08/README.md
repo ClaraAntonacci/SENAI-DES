@@ -8,11 +8,12 @@ Exemplo de uma Splash Screen com animação de entrada com Flutter
 
 ##  Telas
 
-Splash  
-![Splash](assets/splash.png)
+                           
+| Home | Splash |
+|:----:|:------:|
+| ![Home](assets/img/home.png) | ![Splash](assets/img/splash.png) |
+| Home | Splash |
 
-Home  
-![Home](assets/home.png)
 
 ---
 
@@ -21,22 +22,6 @@ Home
 Flutter  
 VsCode  
 Android Studio  
-
----
-
-## Efeitos        WidGets
-
-Movimento (cima → baixo)        Transform.translate  
-Imagens        Image.asset()  
-Assincronicidade        async  
-Controle de tempo        AnimationController  
-Compartilhamento de dados entre telas (shared, "LocalStorage")        Biblioteca: shared_preferences.dart (SharedPreferences)  
-Conversão de dados        json.encode(), json.decode()  
-
----
-
-Splash        Home  
-Splash        Home  
 
 ---
 
