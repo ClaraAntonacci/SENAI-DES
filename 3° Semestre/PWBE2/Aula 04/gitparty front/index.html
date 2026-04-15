@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Eventos</h1>
+    <button onclick="abrirModal()">+ Evento</button>
+</header>
+
+<main id="lista"></main>
+
+<div id="modal" class="modal">
+    <div class="conteudo-modal">
+        <h2>Novo Evento</h2>
+
+        <input type="text" id="titulo" placeholder="Título">
+        <input type="text" id="local" placeholder="Local">
+        <input type="datetime-local" id="data">
+        <textarea id="descricao" placeholder="Descrição"></textarea>
+
+        <button onclick="salvarEvento()">Salvar</button>
+        <button onclick="fecharModal()">Fechar</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

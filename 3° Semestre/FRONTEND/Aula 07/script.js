@@ -1,4 +1,9 @@
 const url = 'https://receitasapi-b-2025.vercel.app/';
+
+// const baseUrl = "http://localhost:3000/";
+
+// fetch(`${baseUrl}/eventos/cadastrar`)
+
 const receitas = [];
 
 

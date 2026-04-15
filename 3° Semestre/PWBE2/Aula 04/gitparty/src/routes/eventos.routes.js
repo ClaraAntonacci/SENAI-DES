@@ -1,13 +1,11 @@
 const express = require("express");
 
 const router = express.Router();
+const upload = require("../middleware/uploadImagem");
 
-const { 
-    cadastrar, 
-    listar, 
-    buscar, 
-    atualizar, 
-    excluir } = require("../controllers/eventos.controller");
+
+
+const { cadastrar, listar, buscar, atualizar, excluir } = require("../controllers/eventos.controller");
 
 router.post("/cadastrar", cadastrar);
 router.get("/listar", listar);
