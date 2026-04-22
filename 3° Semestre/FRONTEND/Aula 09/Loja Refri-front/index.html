@@ -1,26 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clara-Deliverys</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
+<body>
+
 <header>
     <nav>
         <ul>
             <h3 id="logo">Clara-Deliverys</h3>
-            <h3 id="nav-item">Home</h3>
+            <button id="add-product-btn">Adicionar Produto</button>
         </ul>
     </nav>
 </header>
-<body>
-    <div class="container">
+
+<div class="container">
+
+    <div class="top-bar">
         <h1>Produtos</h1>
-        <div class="product-list">
-    
+        <input type="text" id="search-bar" placeholder="Pesquisar produtos...">
     </div>
-    
-    
+
+    <div id="products-container"></div>
+
+</div>
+
+
+<div id="product-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <h2 id="modal-title"></h2>
+        <img id="modal-image">
+
+        <input id="nomeEdit" placeholder="Nome">
+        <input id="descricaoEdit" placeholder="Descrição">
+        <input id="precoEdit" type="number" placeholder="Preço">
+        <input id="tipoEdit" placeholder="Tipo">
+        <input id="imagemEdit" placeholder="Imagem URL">
+
+        <button id="update-btn">Atualizar</button>
+    </div>
+</div>
+
+
+<div id="add-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-add">&times;</span>
+
+        <h2>Adicionar Produto</h2>
+
+        <input type="text" id="add-nome" placeholder="Nome">
+        <textarea id="add-descricao" placeholder="Descrição"></textarea>
+        <input type="number" id="add-preco" placeholder="Preço">
+        <input type="text" id="add-tipo" placeholder="Tipo">
+        <input type="text" id="add-imagem" placeholder="Imagem URL">
+
+        <br><br>
+
+        <button id="cancelar">Cancelar</button>
+        <button id="salvar-produto">Salvar</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
