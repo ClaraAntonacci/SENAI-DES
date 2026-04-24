@@ -25,47 +25,95 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
+
   TextEditingController controller = TextEditingController();
+
+  late AnimationController _controllerAnim;
+  late Animation<double> _fade;
+  late Animation<double> _scale;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controllerAnim = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    );
+
+    _fade = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _controllerAnim, curve: Curves.easeIn),
+    );
+
+    _scale = Tween<double>(begin: 0.8, end: 1).animate(
+      CurvedAnimation(parent: _controllerAnim, curve: Curves.easeOutBack),
+    );
+
+    _controllerAnim.forward();
+  }
+
+  @override
+  void dispose() {
+    _controllerAnim.dispose();
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.pink,
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Quiz de Matemática",
-                  style: TextStyle(fontSize: 26, color: Colors.white)),
-
-              SizedBox(height: 20),
-
-              TextField(
-                controller: controller,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: "Digite seu nome",
+      body: AnimatedBuilder(
+        animation: _controllerAnim,
+        builder: (context, child) {
+          return Opacity(
+            opacity: _fade.value,
+            child: Transform.scale(
+              scale: _scale.value,
+              child: child,
+            ),
+          );
+        },
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Quiz de Matemática",
+                  style: TextStyle(fontSize: 26, color: Colors.white),
                 ),
-              ),
 
-              SizedBox(height: 20),
+                SizedBox(height: 20),
 
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => QuizPage(nome: controller.text),
-                    ),
-                  );
-                },
-                child: Text("Começar"),
-              )
-            ],
+                TextField(
+                  controller: controller,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: "Digite seu nome",
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+
+                SizedBox(height: 20),
+
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => QuizPage(nome: controller.text),
+                      ),
+                    );
+                  },
+                  child: Text("Começar"),
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -73,7 +121,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 
-//////////////////// QUIZ ////////////////////
+
 
 class QuizPage extends StatefulWidget {
   final String nome;
@@ -211,6 +259,7 @@ class _QuizPageState extends State<QuizPage> {
     );
   }
 }
+
 
 
 class ResultadoPage extends StatelessWidget {
