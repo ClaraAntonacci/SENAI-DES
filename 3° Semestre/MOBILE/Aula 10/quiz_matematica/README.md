@@ -18,7 +18,7 @@ Exemplo de um app flutter que **abre dados Mockup** JSON, uma lista de perguntas
 |Pontuação|Text()|
 |Animação Splash|AnimationController + ScaleTransition|
 
-|![Splash](./assets/info/telaInicial.png)|![Quiz](./assets/info/perguntas.png)|![Resultado](./assets/info/resultado.png)|
+|![Splash](./assets/telaInicial.png)|![Quiz](./assets/perguntas.png)|![Resultado](./assets/resultado.png)|
 |:-:|:-:|:-:|
 |Splash|Quiz|Resultado|
 
