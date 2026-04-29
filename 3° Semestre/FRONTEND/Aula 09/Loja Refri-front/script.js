@@ -82,35 +82,32 @@ function abrirProduto(produto){
     document.getElementById('tipoEdit').value = produto.tipo;
     document.getElementById('imagemEdit').value = produto.imagem;
 
-    modal.style.display = 'flex';
+    modal.classList.add('active');
 }
 
-const btnClose = document.querySelector('.close');
-if(btnClose){
-    btnClose.onclick = () => {
-        modal.style.display = 'none';
-    };
-}
+document.querySelector('.close').onclick = () => {
+    modal.classList.remove('active');
+};
+
+document.querySelector('.close-add').onclick = () => {
+    cadastro.classList.remove('active');
+};
 
 window.onclick = (e) => {
     if(e.target === modal){
-        modal.style.display = 'none';
+        modal.classList.remove('active');
+    }
+    if(e.target === cadastro){
+        cadastro.classList.remove('active');
     }
 };
 
 document.getElementById('add-product-btn').onclick = () => {
-    cadastro.style.display = 'flex';
+    cadastro.classList.add('active');
 };
 
-const btnCloseAdd = document.querySelector('.close-add');
-if(btnCloseAdd){
-    btnCloseAdd.onclick = () => {
-        cadastro.style.display = 'none';
-    };
-}
-
 document.getElementById('cancelar').onclick = () => {
-    cadastro.style.display = 'none';
+    cadastro.classList.remove('active');
 };
 
 document.getElementById('salvar-produto').onclick = function(){
@@ -121,10 +118,9 @@ document.getElementById('salvar-produto').onclick = function(){
     const tipo = document.getElementById('add-tipo').value.trim();
     const imagem = document.getElementById('add-imagem').value.trim();
 
-    // VALIDAÇÃO
     if (!nome || !descricao || !preco || !tipo || !imagem) {
         alert('Preencha todos os campos!');
-        return; // interrompe aqui
+        return;
     }
 
     const novoProduto = {
@@ -144,7 +140,7 @@ document.getElementById('salvar-produto').onclick = function(){
     })
     .then(()=>{
         alert('Produto cadastrado!');
-        cadastro.style.display = 'none';
+        cadastro.classList.remove('active');
         carregarProdutos();
     })
     .catch(()=> alert("Erro ao cadastrar"));
@@ -171,7 +167,7 @@ document.getElementById('update-btn').onclick = function(){
     })
     .then(()=>{
         alert("Produto atualizado!");
-        modal.style.display = 'none';
+        modal.classList.remove('active');
         carregarProdutos();
     })
     .catch(()=> alert("Erro ao editar"));
