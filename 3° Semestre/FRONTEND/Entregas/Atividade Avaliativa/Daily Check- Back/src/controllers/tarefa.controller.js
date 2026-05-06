@@ -4,10 +4,14 @@ const cadastrar = async (req, res) => {
     const data = req.body;
 
     const item = await prisma.tarefa.create({
-        data
+        data: {
+            ...data,
+            dataInicio: new Date(data.dataInicio + "T00:00:00"),
+            dataFim: new Date(data.dataFim + "T00:00:00")
+        }
     });
 
-    res.json(item).status(201).end();
+    res.status(201).json(item);
 };
 
 const listar = async (req, res) => {
@@ -32,10 +36,14 @@ const atualizar = async (req, res) => {
     
     const item = await prisma.tarefa.update({
         where: { id : Number(id) },
-        data: dados
+        data: {
+            ...dados,
+            dataInicio: new Date(dados.dataInicio + "T00:00:00"),
+            dataFim: new Date(dados.dataFim + "T00:00:00")
+        }
     });
 
-    res.json(item).status(200).end();
+    res.status(200).json(item);
 };
 
 const excluir = async (req, res) => {
