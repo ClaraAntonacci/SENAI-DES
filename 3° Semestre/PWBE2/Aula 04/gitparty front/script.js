@@ -1,148 +1,426 @@
-const baseUrl = "http://localhost:3000";
+const url = "http://localhost:3000";
 
-const lista = document.getElementById("lista");
-const modal = document.getElementById("modal");
 
-function limparFormulario() {
-    document.querySelectorAll("#modal input, #modal textarea")
-        .forEach(el => el.value = "");
+
+const cards = document.getElementById("cards");
+
+if(cards){
+    carregarEventos();
 }
 
-function abrirModal() {
-    if (modal) {
-        modal.style.display = "block";
-        limparFormulario();
-    }
-}
+async function carregarEventos(){
 
-function fecharModal() {
-    if (modal) {
-        modal.style.display = "none";
-        limparFormulario();
-    }
-}
+    cards.innerHTML = "";
 
-async function carregar() {
-    if (!lista) return;
+    const response = await fetch(
+        `${url}/eventos/listar`
+    );
 
-    const res = await fetch(`${baseUrl}/eventos/listar`);
-    const eventos = await res.json();
+    const eventos = await response.json();
 
-    lista.innerHTML = "";
+    eventos.forEach(evento => {
 
-    eventos.forEach(e => {
-        const div = document.createElement("div");
-        div.className = "card";
+        const ultimaImagem =
+        evento.imagens[evento.imagens.length - 1];
 
-        div.innerHTML = `
-            <span class="lixeira" onclick="excluir(${e.id}, event)">🗑</span>
-            <h3>${e.titulo}</h3>
-            <p>${e.local}</p>
+        const imagem = ultimaImagem
+        ? `${url}/${ultimaImagem.path}`
+        : "https://placehold.co/600x400";
+
+        cards.innerHTML += `
+        <div class="card">
+
+            <img src="${imagem}">
+
+            <div class="card-content">
+
+                <span class="status">
+                    ${evento.status}
+                </span>
+
+                <h3>${evento.titulo}</h3>
+
+                <p>
+                     ${evento.local}
+                </p>
+
+                <p>
+                    
+                    ${new Date(
+                        evento.data_evento
+                    ).toLocaleDateString("pt-BR")}
+                </p>
+
+                <a href="detalhes.html?id=${evento.id}">
+                    Ver Evento
+                </a>
+
+            </div>
+
+        </div>
         `;
-
-        div.onclick = () => {
-            window.location.href = `detalhes.html?id=${e.id}`;
-        };
-
-        lista.appendChild(div);
     });
 }
 
-async function salvarEvento() {
-    const data = {
-        titulo: document.getElementById("titulo").value,
-        descricao: document.getElementById("descricao").value,
-        data_evento: document.getElementById("data").value,
-        local: document.getElementById("local").value,
-        capacidade_maxima: 10
-    };
 
-    await fetch(`${baseUrl}/eventos/cadastrar`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
 
-    fecharModal();
-    carregar();
+const detalhesContainer =
+document.getElementById("detalhes-container");
+
+if(detalhesContainer){
+    buscarEvento();
 }
 
-async function excluir(id, event) {
-    event.stopPropagation();
+async function buscarEvento(){
 
-    if (!confirm("Excluir evento?")) return;
+    const params =
+    new URLSearchParams(window.location.search);
 
-    const res = await fetch(`${baseUrl}/eventos/excluir/${id}`, {
-        method: "DELETE"
-    });
+    const id = params.get("id");
 
-    const data = await res.json();
+    const response = await fetch(
+        `${url}/eventos/buscar/${id}`
+    );
 
-    if (!res.ok) {
+    const evento = await response.json();
+
+    const ultimaImagem =
+    evento.imagens[evento.imagens.length - 1];
+
+    const imagem = ultimaImagem
+    ? `${url}/${ultimaImagem.path}`
+    : "https://placehold.co/1200x600";
+
+    detalhesContainer.innerHTML = `
+
+    <div class="banner-container">
+
+        <img
+        src="${imagem}"
+        class="banner"
+        >
+
+        <button
+        onclick="excluirEvento(${evento.id})"
+        class="delete-btn"
+        >
+            🗑️
+        </button>
+
+    </div>
+
+    <div class="detalhes-content">
+
+        <div class="info-evento">
+
+            <h2>${evento.titulo}</h2>
+
+            <p>${evento.descricao}</p>
+
+            <div class="infos-grid">
+
+                <div class="info-card">
+
+                    <h4>Data</h4>
+
+                    <p>
+                        ${new Date(
+                            evento.data_evento
+                        ).toLocaleDateString("pt-BR")}
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h4>Local</h4>
+
+                    <p>${evento.local}</p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h4>Capacidade</h4>
+
+                    <p>${evento.capacidade_maxima}</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="side-panel">
+
+            <a href="editar.html?id=${evento.id}">
+                Atualizar Evento
+            </a>
+
+        </div>
+
+    </div>
+    `;
+}
+
+async function excluirEvento(id){
+
+    const confirmar = confirm(
+        "Deseja excluir este evento?"
+    );
+
+    if(!confirmar) return;
+
+    const response = await fetch(
+        `${url}/eventos/excluir/${id}`,
+        {
+            method: "DELETE"
+        }
+    );
+
+    const data = await response.json();
+
+    if(data.erro){
         alert(data.erro);
         return;
     }
 
-    alert(data.mensagem);
-    carregar();
+    alert("Evento excluído");
+
+    window.location.href = "index.html";
 }
 
-if (window.location.pathname.includes("detalhes.html")) {
 
-    const info = document.getElementById("infoEvento");
-    const galeria = document.getElementById("galeria");
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get("id");
+const formEvento =
+document.getElementById("form-evento");
 
-    async function carregarDetalhes() {
-        const res = await fetch(`${baseUrl}/eventos/buscar/${id}`);
-        const evento = await res.json();
+if(formEvento){
 
-        info.innerHTML = `
-            <h2>${evento.titulo}</h2>
-            <p>${evento.descricao}</p>
-            <p><strong>Local:</strong> ${evento.local}</p>
-            <p><strong>Data:</strong> ${evento.data_evento}</p>
-        `;
+    formEvento.addEventListener(
+        "submit",
+        async (e) => {
 
-        galeria.innerHTML = "";
+        e.preventDefault();
 
-        evento.imagens?.forEach(img => {
-            const el = document.createElement("img");
-            el.src = `${baseUrl}/${img.path}`;
-            el.width = 150;
+        const formData =
+        new FormData(formEvento);
 
-            galeria.appendChild(el);
-        });
-    }
+        const evento = {
 
-    async function adicionarImagem() {
-        const file = document.getElementById("imagem").files[0];
+            titulo: formData.get("titulo"),
 
-        if (!file) return alert("Selecione uma imagem");
+            descricao: formData.get("descricao"),
 
-        const formData = new FormData();
-        formData.append("imagem", file);
+            data_evento: formData.get("data_evento"),
 
-        await fetch(`${baseUrl}/imagens-eventos/cadastrar/${id}`, {
-            method: "POST",
-            body: formData
-        });
+            local: formData.get("local"),
 
-        carregarDetalhes();
-    }
+            capacidade_maxima: Number(
+                formData.get("capacidade_maxima")
+            ),
 
-    function voltar() {
+            status: formData.get("status")
+        };
+
+        const response = await fetch(
+            `${url}/eventos/cadastrar`,
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                    "application/json"
+                },
+
+                body: JSON.stringify(evento)
+            }
+        );
+
+        const novoEvento =
+        await response.json();
+
+        const imagem =
+        document.getElementById("imagem").files[0];
+
+        if(imagem){
+
+            const imagemForm =
+            new FormData();
+
+            imagemForm.append(
+                "imagem",
+                imagem
+            );
+
+            imagemForm.append(
+                "nome",
+                evento.titulo
+            );
+
+            await fetch(
+                `${url}/imagens-eventos/cadastrar/${novoEvento.id}`,
+                {
+                    method: "POST",
+                    body: imagemForm
+                }
+            );
+        }
+
+        alert("Evento criado com sucesso");
+
         window.location.href = "index.html";
-    }
-
-    carregarDetalhes();
-
-    window.adicionarImagem = adicionarImagem;
-    window.voltar = voltar;
+    });
 }
 
-carregar();
+
+
+const editarForm =
+document.getElementById("editar-form");
+
+if(editarForm){
+    carregarEventoEditar();
+}
+
+async function carregarEventoEditar(){
+
+    const params =
+    new URLSearchParams(window.location.search);
+
+    const id = params.get("id");
+
+    const btnVoltar =
+    document.getElementById("btn-voltar");
+
+    if(btnVoltar){
+        btnVoltar.href =
+        `detalhes.html?id=${id}`;
+    }
+
+    const response = await fetch(
+        `${url}/eventos/buscar/${id}`
+    );
+
+    const evento = await response.json();
+
+    const ultimaImagem =
+    evento.imagens[evento.imagens.length - 1];
+
+    const imagem = ultimaImagem
+    ? `${url}/${ultimaImagem.path}`
+    : "https://placehold.co/1200x600";
+
+    editarForm.innerHTML = `
+
+    <h2>Editar Evento</h2>
+
+    <img
+    src="${imagem}"
+    class="edit-banner"
+    >
+
+    <input
+    type="text"
+    name="titulo"
+    value="${evento.titulo}"
+    >
+
+    <textarea
+    name="descricao"
+    >${evento.descricao}</textarea>
+
+    <input
+    type="datetime-local"
+    name="data_evento"
+    value="${evento.data_evento.slice(0,16)}"
+    >
+
+    <input
+    type="text"
+    name="local"
+    value="${evento.local}"
+    >
+
+    <input
+    type="number"
+    name="capacidade_maxima"
+    value="${evento.capacidade_maxima}"
+    >
+
+    <select name="status" id="status">
+
+        <option value="ATIVO">
+            ATIVO
+        </option>
+
+        <option value="ENCERRADO">
+            ENCERRADO
+        </option>
+
+        <option value="CANCELADO">
+            CANCELADO
+        </option>
+
+    </select>
+
+    <p class="texto-imagem">
+        Escolha uma nova imagem para atualizar o evento
+    </p>
+
+    <input
+    type="file"
+    id="imagem"
+    accept="image/jpeg"
+    required
+    >
+
+    <div class="historico">
+
+        <h3>Imagens anteriores</h3>
+
+        <div class="historico-imagens">
+
+            ${evento.imagens.map(img => `
+                <img src="${url}/${img.path}">
+            `).join("")}
+
+        </div>
+
+    </div>
+
+    <button>
+        Salvar Alterações
+    </button>
+    `;
+
+    document.getElementById("status").value =
+    evento.status;
+
+    editarForm.addEventListener(
+        "submit",
+        async (e) => {
+
+        e.preventDefault();
+
+        const dados =
+        new FormData(editarForm);
+
+        const imagem =
+        document.getElementById("imagem").files[0];
+
+        dados.append("imagem", imagem);
+
+        await fetch(
+            `${url}/eventos/atualizar/${id}`,
+            {
+                method: "PUT",
+                body: dados
+            }
+        );
+
+        alert("Evento atualizado");
+
+        window.location.href =
+        `detalhes.html?id=${id}`;
+    });
+}

@@ -10,7 +10,7 @@ const { cadastrar, listar, buscar, atualizar, excluir } = require("../controller
 router.post("/cadastrar", cadastrar);
 router.get("/listar", listar);
 router.get("/buscar/:id", buscar);
-router.put("/atualizar/:id", atualizar);
+router.put("/atualizar/:id", upload, atualizar);
 router.delete("/excluir/:id", excluir);
 
 module.exports = router;
