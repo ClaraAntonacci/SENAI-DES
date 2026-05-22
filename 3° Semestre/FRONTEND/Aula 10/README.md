@@ -2,7 +2,7 @@
 
 ##  Descrição do Projeto
 
-Este projeto é uma versão web do clássico jogo **Pedra, Papel e Tesoura**, inspirado na versão apresentada por :contentReference[oaicite:0]{index=0} na série :contentReference[oaicite:1]{index=1}.
+Este projeto é uma versão web do clássico jogo **Pedra, Papel e Tesoura**, inspirado na versão apresentada por Sheldon Cooper na série The big bang theory
 
 O jogo permite que o usuário escolha entre cinco opções:
 
