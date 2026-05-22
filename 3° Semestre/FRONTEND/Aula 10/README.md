@@ -1,154 +1,58 @@
-#  Estacionamento ACME WEB
+# Pedra, Papel, Tesoura, Lagarto e Spock
 
-## Descrição do Projeto
+##  Descrição do Projeto
 
-O Estacionamento ACME é uma aplicação web desenvolvida para gerenciamento de veículos e estadias de um estacionamento.
+Este projeto é uma versão web do clássico jogo **Pedra, Papel e Tesoura**, inspirado na versão apresentada por :contentReference[oaicite:0]{index=0} na série :contentReference[oaicite:1]{index=1}.
 
-O sistema permite cadastrar veículos, registrar entradas e saídas, calcular automaticamente o valor da estadia e visualizar todas as informações de forma simples e organizada.
+O jogo permite que o usuário escolha entre cinco opções:
 
-O projeto foi desenvolvido utilizando HTML, CSS e JavaScript no front-end, juntamente com Node.js, Express, Prisma ORM e MySQL no back-end.
+- 🪨 Pedra
+- 📄 Papel
+- ✂️ Tesoura
+- 🦎 Lagarto
+- 🖖 Spock
 
----
-
-#  Funcionalidades
-
-## Veículos
-- Cadastro de veículos
-- Listagem de veículos
-- Busca de veículo por placa
-- Atualização de veículos
-- Exclusão de veículos
-
-## Estadias
-- Registro de entrada
-- Registro de saída
-- Listagem de estadias
-- Cálculo automático do valor total
-- Exclusão de estadias
+O sistema realiza escolhas aleatórias para o computador, calcula automaticamente o vencedor da rodada e mantém a pontuação do jogador.
 
 ---
 
-# 🛠 Tecnologias Utilizadas
+# Funcionalidades
 
-## Back-end
-- Node.js
-- Express
-- Prisma ORM
-- MySQL
+- Escolha entre 5 opções
+- Sistema de pontuação
+- Escolha aleatória do computador
+- Tela de regras
+- Animações e efeitos visuais
+- Interface interativa e responsiva
 
-## Front-end
+---
+
+#  Tecnologias Utilizadas
+
 - HTML5
-- CSS3
+- CSS
 - JavaScript
 
-## Ferramentas
-- VSCode
-- Insomnia
-- GitHub
+---
+
+#  Regras do Jogo
+
+- ✂️ Tesoura corta Papel
+- 📄 Papel cobre Pedra
+- 🪨 Pedra quebra Tesoura
+- 🪨 Pedra esmaga Lagarto
+- 🦎 Lagarto envenena Spock
+- 🖖 Spock quebra Tesoura
+- ✂️ Tesoura decapita Lagarto
+- 🦎 Lagarto come Papel
+- 📄 Papel refuta Spock
+- 🖖 Spock vaporiza Pedra
 
 ---
 
-# Diagramas UML
+#  Como Executar
 
-## Diagrama de Classes
+1. Faça o download do projeto
+2. Abra a pasta no VS Code
+3. Execute o arquivo `index.html`
 
-![Diagrama de Classes](./docs/der-dc.png)
-
----
-
-## Diagrama de Casos de Uso
-
-![Diagrama de Casos de Uso](./docs/diagrama-casos-de-uso.png)
-
----
-
-## Diagrama de Atividades
-
-![Diagrama de Atividades](./docs/diagrama-atividades.png)
-
-# ▶ Como Executar o Projeto
-
-## 1 Clonar o repositório
-
-```bash
-git clone URL_DO_REPOSITORIO
-```
-
----
-
-## 2 Entrar na pasta da API
-
-```bash
-cd api
-```
-
----
-
-## 3 Instalar dependências
-
-```bash
-npm install
-```
-
----
-
-## 4 Configurar o banco de dados
-
-Criar arquivo `.env`
-
-```env
-DATABASE_URL="mysql://usuario:senha@localhost:3306/estacionamento"
-```
-
----
-
-## 5 Executar as migrations
-
-```bash
-npx prisma migrate dev
-```
-
----
-
-## 6 Iniciar servidor
-
-```bash
-npm run dev
-```
-
-Servidor:
-
-```txt
-http://localhost:3000
-```
-
----
-
-# Executar Front-end
-
-Abrir o arquivo:
-
-```txt
-index.html
-```
-
-ou utilizar a extensão Live Server do VSCode.
-
----
-
-# Regras de Negócio
-
-- Todos os veículos devem ser cadastrados no banco
-- A entrada da estadia é gerada automaticamente
-- A saída inicia nula
-- O valor total inicia nulo
-- O sistema calcula automaticamente o valor ao finalizar a estadia
-
----
-
-
-#  Desenvolvido por
-
-Clara Andrzejewsky Antonacci
-
-Projeto desenvolvido para a Situação de Aprendizagem Full-stack - SENAI.
