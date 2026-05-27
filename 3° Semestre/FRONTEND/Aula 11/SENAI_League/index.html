@@ -1,0 +1,208 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SENAI League</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header class="topo">
+
+        <div class="logo-area">
+            <h1>SENAI League</h1>
+            <p>Batalha dos Professores</p>
+        </div>
+
+        <div class="placar">
+
+            <h2>PONTOS</h2>
+            <p class="pontos">0</p>
+
+        </div>
+
+    </header>
+
+
+    <main class="arena">
+
+
+
+        <div class="personagem-area area-rennye">
+
+            <button value="rennye" class="personagem rennye" onclick="jogar('rennye')">
+
+                <img src="./img/rennye.jpg" alt="">
+                <p>Rennye</p>
+
+            </button>
+
+        </div>
+
+
+
+        <div class="personagem-area area-robson">
+
+            <button value="robson" class="personagem robson" onclick="jogar('robson')">
+
+                <img src="./img/robson.jpg" alt="">
+                <p>Robson</p>
+
+            </button>
+
+        </div>
+
+
+
+        <div class="personagem-area area-wellifabio">
+
+            <button value="wellifabio" class="personagem wellifabio" onclick="jogar('wellifabio')">
+
+                <img src="./img/wellifabio.jpg" alt="">
+                <p>Wellifabio</p>
+
+            </button>
+
+        </div>
+
+
+
+        <div class="personagem-area area-ronaldo">
+
+            <button value="ronaldo" class="personagem ronaldo" onclick="jogar('ronaldo')">
+
+                <img src="./img/ronaldo.jpg" alt="">
+                <p>Ronaldo</p>
+
+            </button>
+
+        </div>
+
+
+
+        <div class="personagem-area area-weverton">
+
+            <button value="weverton" class="personagem weverton" onclick="jogar('weverton')">
+
+                <img src="./img/weverton.jpg" alt="">
+                <p>Weverton</p>
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <section class="resultado-area">
+
+        <div class="lado">
+
+            <h2>VOCÊ</h2>
+
+            <p class="jogador-escolha"></p>
+
+        </div>
+
+        <div class="centro">
+
+            <h1 class="resultado-texto"></h1>
+
+            <button class="btn-jogar" onclick="jogarNovamente()">
+
+                Jogar Novamente
+
+            </button>
+
+        </div>
+
+        <div class="lado">
+
+            <h2>COMPUTADOR</h2>
+
+            <p class="cpu-escolha"></p>
+
+        </div>
+
+    </section>
+
+
+
+    <button class="regras-button" onclick="mostraregras()">
+
+        Ver Regras
+
+    </button>
+
+
+
+    <div class="regras">
+
+        <div class="regras-titulo">
+
+            <h1>Regras do SENAI League</h1>
+
+            <button onclick="fecharegras()">X</button>
+
+        </div>
+
+        <div class="imagem-regras">
+
+            <img src="./img/regras.jpg" alt="Regras">
+
+        </div>
+
+        <div class="professores">
+
+            <div class="card-professor" onclick="mostrarInfo('rennye')">
+                <img src="./img/rennye.jpg">
+                <p>Rennye</p>
+            </div>
+
+            <div class="card-professor" onclick="mostrarInfo('robson')">
+                <img src="./img/robson.jpg">
+                <p>Robson</p>
+            </div>
+
+            <div class="card-professor" onclick="mostrarInfo('wellifabio')">
+                <img src="./img/wellifabio.jpg">
+                <p>Wellifabio</p>
+            </div>
+
+            <div class="card-professor" onclick="mostrarInfo('ronaldo')">
+                <img src="./img/ronaldo.jpg">
+                <p>Ronaldo</p>
+            </div>
+
+            <div class="card-professor" onclick="mostrarInfo('weverton')">
+                <img src="./img/weverton.jpg">
+                <p>Weverton</p>
+            </div>
+
+        </div>
+
+        <div class="info-professor">
+
+            <p id="texto-professor">
+                Clique em um professor para saber mais.
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
