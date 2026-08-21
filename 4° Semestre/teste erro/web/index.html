@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineTicket - Cinema</title>
+  <link class="styles" rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      CINE<span>TICKET</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#" id="link-catalogo" class="active" onclick="trocarAba('catalogo')">
+        Em Cartaz
+      </a>
+      <a href="#" id="link-ingressos" onclick="trocarAba('meus-ingressos')">
+        Meus Ingressos
+      </a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+   
+    <section id="aba-catalogo" class="aba active">
+      <h1 class="section-title">Filmes em Cartaz</h1>
+      <p class="subtitle">Escolha um filme para comprar seu ingresso.</p>
+      <div id="movies-grid" class="movies-grid">
+        <p class="loading">Carregando filmes...</p>
+      </div>
+    </section>
+
+    
+    <section id="aba-checkout" class="aba">
+      <div class="step-card">
+
+   
+        <div id="step-sessao" class="step active">
+          <h2 class="section-title">Selecione a Sessão</h2>
+          <div class="movie-selected">
+            <span>Filme selecionado</span>
+            <strong id="filme-selecionado">---</strong>
+          </div>
+
+          <div class="form-group">
+            <label for="select-sala">Sala</label>
+            <select id="select-sala">
+              <option value="Sala 01">Sala 01</option>
+              <option value="Sala 02">Sala 02</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="select-horario">Horário</label>
+            <select id="select-horario">
+              <option value="">Selecione um horário</option>
+            </select>
+          </div>
+
+          <button class="btn" onclick="irParaAssentos()">
+            Avançar para Assentos
+          </button>
+        </div>
+
+      
+        <div id="step-assentos" class="step" style="display:none;">
+          <h2 class="section-title center">Escolha sua Poltrona</h2>
+          <div class="screen-container">
+            <div class="screen">TELA</div>
+          </div>
+
+          <div id="seats-grid" class="seats-grid"></div>
+
+          <div class="legend">
+            <div class="legend-item">
+              <div class="legend-box livre"></div> Livre
+            </div>
+            <div class="legend-item">
+              <div class="legend-box selecionado"></div> Selecionado
+            </div>
+            <div class="legend-item">
+              <div class="legend-box ocupado"></div> Ocupado
+            </div>
+          </div>
+
+          <button id="btn-ir-confirmar" class="btn" disabled onclick="irParaConfirmacao()">
+            Avançar para Verificação
+          </button>
+        </div>
+
+      
+        <div id="step-confirmacao" class="step" style="display:none;">
+          <h2 class="section-title">Verificação da Compra</h2>
+          <p class="verification-text">Para continuar, confirme os dados da sua compra.</p>
+
+          <div class="form-group">
+            <label for="input-filme-confirm">Nome do Filme</label>
+            <input type="text" id="input-filme-confirm" placeholder="Digite o nome do filme" autocomplete="off" required>
+          </div>
+
+          <div class="form-group">
+            <label for="input-sala-confirm">Sessão Selecionada</label>
+            <input type="text" id="input-sala-confirm" readonly>
+          </div>
+
+          <div class="form-group">
+            <label for="input-cadeira-confirm">Assento Selecionado</label>
+           
+            <input type="text" id="input-cadeira-confirm" readonly>
+          </div>
+
+          <div class="verification-warning">
+            Os dados serão verificados antes da finalização.
+          </div>
+
+          <button class="btn btn-success" onclick="verificarCompra()">
+            Verificar e Finalizar Compra
+          </button>
+        </div>
+
+        
+        <div id="step-resultado" class="step" style="display:none;">
+          <div id="resultado-compra" class="resultado-compra"></div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="aba-meus-ingressos" class="aba">
+      <h1 class="section-title">Meus Ingressos</h1>
+      <p class="subtitle">Histórico de ingressos registrados no sistema.</p>
+      <div id="lista-ingressos" class="tickets-grid">
+        <p class="loading">Nenhum ingresso carregado.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

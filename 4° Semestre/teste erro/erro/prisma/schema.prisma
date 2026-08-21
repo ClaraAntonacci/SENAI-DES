@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+
+}
+
+model Filme {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  descricao String?
+  duracao   Int
+  genero    String
+  sessoes   Sessao[]
+
+  compras Compra[]
+}
+
+model Sessao {
+  id        Int       @id @default(autoincrement())
+  horario   String
+  filmeId   Int
+  filme     Filme     @relation(fields: [filmeId], references: [id])
+  assentos  Assento[]
+  compras   Compra[]
+}
+
+model Assento {
+  id        Int      @id @default(autoincrement())
+  numero    String
+  ocupado   Boolean  @default(false)
+  sessaoId  Int
+  sessao    Sessao   @relation(fields: [sessaoId], references: [id])
+  ingressos Ingresso[]
+}
+
+model Compra {
+  id         Int        @id @default(autoincrement())
+  filmeId    Int
+  sessaoId   Int
+  quantidade Int
+  valorTotal Float
+  criadoEm   DateTime   @default(now())
+
+  filme      Filme      @relation(fields: [filmeId], references: [id])
+  sessao     Sessao     @relation(fields: [sessaoId], references: [id])
+  ingressos  Ingresso[]
+}
+
+model Ingresso {
+  id        Int      @id @default(autoincrement())
+  compraId  Int
+  assentoId Int
+  valor     Float
+
+  compra    Compra   @relation(fields: [compraId], references: [id])
+  assento   Assento  @relation(fields: [assentoId], references: [id])
+}

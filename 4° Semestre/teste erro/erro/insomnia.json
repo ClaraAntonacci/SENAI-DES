@@ -1,0 +1,439 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-08-21T17:47:23.745Z",
+  "__export_source": "backend-aula",
+  "resources": [
+    {
+      "_id": "wrk_backend",
+      "_type": "workspace",
+      "name": "Backend Aula"
+    },
+    {
+      "_id": "fld_erro",
+      "_type": "request_group",
+      "parentId": "wrk_backend",
+      "name": "erro"
+    },
+    {
+      "_id": "fld_Filme",
+      "_type": "request_group",
+      "parentId": "fld_erro",
+      "name": "Filme"
+    },
+    {
+      "_id": "req_Filme_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Filme",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/filme/listar"
+    },
+    {
+      "_id": "req_Filme_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Filme",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/filme/buscar/:id"
+    },
+    {
+      "_id": "req_Filme_POST",
+      "_type": "request",
+      "parentId": "fld_Filme",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/filme/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"descricao\": \"string\",\n  \"duracao\": 0,\n  \"genero\": \"string\"\n}"
+      }
+    },
+    {
+      "_id": "req_Filme_PUT",
+      "_type": "request",
+      "parentId": "fld_Filme",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/filme/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"descricao\": \"string\",\n  \"duracao\": 0,\n  \"genero\": \"string\"\n}"
+      }
+    },
+    {
+      "_id": "req_Filme_DELETE",
+      "_type": "request",
+      "parentId": "fld_Filme",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/filme/excluir/:id"
+    },
+    {
+      "_id": "fld_Sessao",
+      "_type": "request_group",
+      "parentId": "fld_erro",
+      "name": "Sessao"
+    },
+    {
+      "_id": "req_Sessao_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Sessao",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/sessao/listar"
+    },
+    {
+      "_id": "req_Sessao_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Sessao",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/sessao/buscar/:id"
+    },
+    {
+      "_id": "req_Sessao_POST",
+      "_type": "request",
+      "parentId": "fld_Sessao",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/sessao/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"horario\": \"string\",\n  \"filmeId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Sessao_PUT",
+      "_type": "request",
+      "parentId": "fld_Sessao",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/sessao/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"horario\": \"string\",\n  \"filmeId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Sessao_DELETE",
+      "_type": "request",
+      "parentId": "fld_Sessao",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/sessao/excluir/:id"
+    },
+    {
+      "_id": "fld_Assento",
+      "_type": "request_group",
+      "parentId": "fld_erro",
+      "name": "Assento"
+    },
+    {
+      "_id": "req_Assento_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Assento",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/assento/listar"
+    },
+    {
+      "_id": "req_Assento_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Assento",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/assento/buscar/:id"
+    },
+    {
+      "_id": "req_Assento_POST",
+      "_type": "request",
+      "parentId": "fld_Assento",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/assento/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"numero\": \"string\",\n  \"ocupado\": true,\n  \"sessaoId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Assento_PUT",
+      "_type": "request",
+      "parentId": "fld_Assento",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/assento/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"numero\": \"string\",\n  \"ocupado\": true,\n  \"sessaoId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Assento_DELETE",
+      "_type": "request",
+      "parentId": "fld_Assento",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/assento/excluir/:id"
+    },
+    {
+      "_id": "fld_Compra",
+      "_type": "request_group",
+      "parentId": "fld_erro",
+      "name": "Compra"
+    },
+    {
+      "_id": "req_Compra_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Compra",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/compra/listar"
+    },
+    {
+      "_id": "req_Compra_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Compra",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/compra/buscar/:id"
+    },
+    {
+      "_id": "req_Compra_POST",
+      "_type": "request",
+      "parentId": "fld_Compra",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/compra/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"filmeId\": 0,\n  \"sessaoId\": 0,\n  \"quantidade\": 0,\n  \"valorTotal\": 0,\n  \"criadoEm\": \"2026-08-21T17:47:23.736Z\"\n}"
+      }
+    },
+    {
+      "_id": "req_Compra_PUT",
+      "_type": "request",
+      "parentId": "fld_Compra",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/compra/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"filmeId\": 0,\n  \"sessaoId\": 0,\n  \"quantidade\": 0,\n  \"valorTotal\": 0,\n  \"criadoEm\": \"2026-08-21T17:47:23.736Z\"\n}"
+      }
+    },
+    {
+      "_id": "req_Compra_DELETE",
+      "_type": "request",
+      "parentId": "fld_Compra",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/compra/excluir/:id"
+    },
+    {
+      "_id": "fld_Ingresso",
+      "_type": "request_group",
+      "parentId": "fld_erro",
+      "name": "Ingresso"
+    },
+    {
+      "_id": "req_Ingresso_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Ingresso",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/ingresso/listar"
+    },
+    {
+      "_id": "req_Ingresso_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Ingresso",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/ingresso/buscar/:id"
+    },
+    {
+      "_id": "req_Ingresso_POST",
+      "_type": "request",
+      "parentId": "fld_Ingresso",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/ingresso/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"compraId\": 0,\n  \"assentoId\": 0,\n  \"valor\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Ingresso_PUT",
+      "_type": "request",
+      "parentId": "fld_Ingresso",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/ingresso/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"compraId\": 0,\n  \"assentoId\": 0,\n  \"valor\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Ingresso_DELETE",
+      "_type": "request",
+      "parentId": "fld_Ingresso",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/ingresso/excluir/:id"
+    }
+  ]
+}
